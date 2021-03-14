@@ -5,14 +5,14 @@ var renderer;   //Responsável por renderizar
 
 var elementos = [];
 
-var velocidade1 = -0.7;
-var velocidade2 = 0.7;
-var velocidade3 = -0.7;
-var velocidade4 = 0.7;
-var velocidade5 = -0.7;
-var velocidade6 = -0.7;
-var velocidade7 = -0.7;
-var velocidade8 = -0.7;
+var velocidade1 = -0.1;
+var velocidade2 = 0.1;
+var velocidade3 = -0.1;
+var velocidade4 = 0.1;
+var velocidade5 = -0.2;
+var velocidade6 = -0.2;
+var velocidade7 = -0.2;
+var velocidade8 = -0.2;
 
 var criaIcosahedro = function() {
     const radius = 7;  
@@ -219,16 +219,70 @@ var animation = function (){
     }
 
 
-	for (let j = 0; j < balls.length; j++) {
-        if (!(this === balls[j])) {
-          const dx = this.x - balls[j].x;
-          const dy = this.y - balls[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-    
-          if (distance < this.size + balls[j].size) {
-            balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
-          }
-        }
+    var dx1 = elementos["icosahedro1"].position.x - elementos["icosahedro2"].position.x;
+    var dy1 = elementos["icosahedro1"].position.y - elementos["icosahedro2"].position.y;
+    var distance1 = Math.sqrt(dx1 * dx1 + dy1 * dy1);
+
+    if (distance1 < 14) {
+        velocidade1 *= -1;
+        velocidade2 *= -1;
+        velocidade3 *= -1;
+        velocidade4 *= -1;
+    }
+
+    var dx2 = elementos["icosahedro1"].position.x - elementos["dodecahedron1"].position.x;
+    var dy2 = elementos["icosahedro1"].position.y - elementos["dodecahedron1"].position.y;
+    var distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+
+    if (distance2 < 14) {
+        velocidade1 *= -1;
+        velocidade2 *= -1;
+        velocidade5 *= -1;
+        velocidade6 *= -1;
+    }
+
+    var dx3 = elementos["icosahedro1"].position.x - elementos["dodecahedron2"].position.x;
+    var dy3 = elementos["icosahedro1"].position.y - elementos["dodecahedron2"].position.y;
+    var distance3 = Math.sqrt(dx3 * dx3 + dy3 * dy3);
+
+    if (distance3 < 14) {
+        velocidade1 *= -1;
+        velocidade2 *= -1;
+        velocidade7 *= -1;
+        velocidade8 *= -1;
+    }
+
+    var dx4 = elementos["icosahedro2"].position.x - elementos["dodecahedron1"].position.x;
+    var dy4 = elementos["icosahedro2"].position.y - elementos["dodecahedron1"].position.y;
+    var distance4 = Math.sqrt(dx4 * dx4 + dy4 * dy4);
+
+    if (distance4 < 14) {
+        velocidade3 *= -1;
+        velocidade4 *= -1;
+        velocidade5 *= -1;
+        velocidade6 *= -1;
+    }
+
+    var dx5 = elementos["icosahedro2"].position.x - elementos["dodecahedron2"].position.x;
+    var dy5 = elementos["icosahedro2"].position.y - elementos["dodecahedron2"].position.y;
+    var distance5 = Math.sqrt(dx5 * dx5 + dy5 * dy5);
+
+    if (distance5 < 14) {
+        velocidade3 *= -1;
+        velocidade4 *= -1;
+        velocidade7 *= -1;
+        velocidade8 *= -1;
+    }
+
+    var dx6 = elementos["dodecahedron1"].position.x - elementos["dodecahedron2"].position.x;
+    var dy6 = elementos["dodecahedron1"].position.y - elementos["dodecahedron2"].position.y;
+    var distance6 = Math.sqrt(dx6 * dx6 + dy6 * dy6);
+
+    if (distance6 < 14) {
+        velocidade5 *= -1;
+        velocidade6 *= -1;
+        velocidade7 *= -1;
+        velocidade8 *= -1;
     }
 
     
