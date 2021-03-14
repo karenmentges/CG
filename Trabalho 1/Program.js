@@ -5,10 +5,14 @@ var renderer;   //Responsável por renderizar
 
 var elementos = [];
 
-var velocidade1 = 0.5;
-var velocidade2 = 0.5;
-var velocidade3 = -0.5;
-var velocidade4 = -0.5;
+var velocidade1 = -0.7;
+var velocidade2 = 0.7;
+var velocidade3 = -0.7;
+var velocidade4 = 0.7;
+var velocidade5 = -0.7;
+var velocidade6 = -0.7;
+var velocidade7 = -0.7;
+var velocidade8 = -0.7;
 
 var criaIcosahedro = function() {
     const radius = 7;  
@@ -27,8 +31,8 @@ var criaIcosahedro = function() {
 
     let material2   = new THREE.MeshPhongMaterial({color: green});
     let icosahedro2 = new THREE.Mesh(geometry, material2);
-    icosahedro2.position.x = 80;
-    icosahedro2.position.y = 35;
+    icosahedro2.position.x = 30;
+    icosahedro2.position.y = 20;
     elementos["icosahedro2"] = icosahedro2;
 
     scene.add(icosahedro1);
@@ -46,13 +50,13 @@ var criaDodecahedron = function(){
     
     let material3 = new THREE.MeshPhongMaterial({color: purple});
     let dodecahedron1  = new THREE.Mesh(geometry, material3);
-    dodecahedron1.position.x = -40;
-    dodecahedron1.position.y = -15;
+    dodecahedron1.position.x = -20;
+    dodecahedron1.position.y = 0;
     elementos["dodecahedron1"] = dodecahedron1;
 
     let material4 = new THREE.MeshPhongMaterial({color: blue});
     let dodecahedron2  = new THREE.Mesh(geometry, material4);
-    dodecahedron2.position.x = 80;
+    dodecahedron2.position.x = 60;
     dodecahedron2.position.y = -15;
     elementos["dodecahedron2"] = dodecahedron2;
 
@@ -96,6 +100,62 @@ var animation = function (){
 
     requestAnimationFrame(animation); //Adiciona o método na fila de renderização
 
+    const timer = Date.now() * 0.0001;
+
+
+	scene.traverse( function ( icosahedro1 ) {
+
+		if ( icosahedro1.isMesh === true ) {
+
+			icosahedro1.rotation.x = timer * 5;
+			icosahedro1.rotation.y = timer * 2.5;
+
+		}
+
+	} );
+    
+    scene.traverse( function ( icosahedro2 ) {
+
+		if ( icosahedro2.isMesh === true ) {
+
+			icosahedro2.rotation.x = timer * 5;
+			icosahedro2.rotation.y = timer * 2.5;
+
+		}
+
+	} );
+
+    scene.traverse( function ( dodecahedron1 ) {
+
+		if ( dodecahedron1.isMesh === true ) {
+
+			dodecahedron1.rotation.x = timer * 5;
+			dodecahedron1.rotation.y = timer * 2.5;
+
+		}
+
+	} );scene.traverse( function ( dodecahedron2 ) {
+
+		if ( dodecahedron2.isMesh === true ) {
+
+			dodecahedron2.rotation.x = timer * 5;
+			dodecahedron2.rotation.y = timer * 2.5;
+
+		}
+
+	} );
+
+    scene.traverse( function ( icosahedro1 ) {
+
+		if ( icosahedro1.isMesh === true ) {
+
+			icosahedro1.rotation.x = timer * 5;
+			icosahedro1.rotation.y = timer * 2.5;
+
+		}
+
+	} );
+
     elementos["icosahedro1"].position.x -= velocidade1;
 	if (elementos["icosahedro1"].position.x > 85){
         velocidade1 *= -1;
@@ -125,8 +185,53 @@ var animation = function (){
 	else if (elementos["icosahedro2"].position.y < -20){
         velocidade4 *= -1;
     }
+
+
+
+    elementos["dodecahedron1"].position.x -= velocidade5;
+	if (elementos["dodecahedron1"].position.x > 85){
+        velocidade5 *= -1;
+    }
+    else if(elementos["dodecahedron1"].position.x < -45){
+        velocidade5 *= -1;
+    }
+    elementos["dodecahedron1"].position.y -= velocidade6;
+	if (elementos["dodecahedron1"].position.y < -20){
+        velocidade6 *= -1;
+    }
+    else if (elementos["dodecahedron1"].position.y > 40){
+        velocidade6 *= -1;
+    }
+
+	elementos["dodecahedron2"].position.x -= velocidade7;
+	if (elementos["dodecahedron2"].position.x < -45){
+        velocidade7 *= -1;
+    }
+    else if(elementos["dodecahedron2"].position.x > 85){
+        velocidade7 *= -1;
+    }
+    elementos["dodecahedron2"].position.y -= velocidade8;
+    if (elementos["dodecahedron2"].position.y > 40){
+        velocidade8 *= -1;
+    }
+	else if (elementos["dodecahedron2"].position.y < -20){
+        velocidade8 *= -1;
+    }
+
+
+	for (let j = 0; j < balls.length; j++) {
+        if (!(this === balls[j])) {
+          const dx = this.x - balls[j].x;
+          const dy = this.y - balls[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
     
-		
+          if (distance < this.size + balls[j].size) {
+            balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
+          }
+        }
+    }
+
+    
     renderer.render(scene, camera);
 }
 
