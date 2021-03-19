@@ -12,17 +12,20 @@ var criaCubo = function(){
 
     let pink   = new THREE.Color("rgb(200,33,81)");
     let green  = new THREE.Color("rgb(64,224,208)");
-    //let purple = new THREE.Color(148,0,211);
-    //let colors = [pink, green, purple];
+    let purple = new THREE.Color(148,0,211);
 
+    let material = [new THREE.MeshBasicMaterial({color: pink}),
+                    new THREE.MeshBasicMaterial({color: green}),
+                    new THREE.MeshBasicMaterial({color: purple}),
+                    new THREE.MeshBasicMaterial({color: pink}),
+                    new THREE.MeshBasicMaterial({color: green}),
+                    new THREE.MeshBasicMaterial({color: purple}),]
 
-    let material = new THREE.MeshBasicMaterial({color: pink});
     let cubo = new THREE.Mesh(geometria, material); //Mesh(malha), junta a geometria e o material, criando uma malha de triângulos
     cubo.position.x = -20;
     elementos["cubo1"] = cubo;
 
-    let material2 = new THREE.MeshBasicMaterial({color: green});
-    let cubo2 = new THREE.Mesh(geometria, material2);
+    let cubo2 = new THREE.Mesh(geometria, material);
     cubo2.position.x = 60;
     cubo2.position.y = 20;
     elementos["cubo2"] = cubo2;
@@ -55,12 +58,18 @@ var animation = function (){
 
     requestAnimationFrame(animation); //Adiciona o método na fila de renderização
 
-    elementos["cubo1"].position.x += 0.5;
+    elementos["cubo1"].rotation.x += 0.02;
+    elementos["cubo1"].rotation.z += 0.02;
 
-	elementos["cubo2"].position.x -= velocidade;
-	if (elementos["cubo2"].position.x < -30){
-        velocidade *= -1;
-    }
+    elementos["cubo2"].rotation.x += 0.02;
+    elementos["cubo2"].rotation.z += 0.02;
+
+    //elementos["cubo1"].position.x += 0.5;
+
+	//elementos["cubo2"].position.x -= velocidade;
+	//if (elementos["cubo2"].position.x < -30){
+    //    velocidade *= -1;
+    //}
 		
     renderer.render(scene, camera);
 }
