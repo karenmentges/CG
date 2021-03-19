@@ -51,25 +51,87 @@ var init = function(){
     criaCubo();
 
     animation();
+
+    document.addEventListener('keypress', apertouBotao);
+    document.addEventListener('keydown', pressionouBotao);
+    document.addEventListener('keyup', soltouBotao);
     
 };
+
+//Função para utilizar uma tecla por vez
+var apertouBotao = function(e) {
+
+    if(e.keyCode == 114){ // tecla 'R'
+        elementos["cubo1"].rotation.x += 0.02;
+        elementos["cubo1"].rotation.z += 0.02;
+    }
+    if(e.keyCode == 32){ // tecla 'espaço'
+        elementos["cubo1"].position.y += 1;
+    }
+
+    //console.log(e); Imprime a tecla que estou apertando
+} 
+
+//Funções para utilizar mais de uma tecla por vez
+var r = false;
+var space = false;
+
+var pressionouBotao = function(e) {
+    if(e.keyCode == 82){ // tecla 'R'
+        r = true;
+    }
+    if(e.keyCode == 32){ // tecla 'espaço'
+        space = true;
+    }
+}
+
+var soltouBotao = function(e) {
+    if(e.keyCode == 82){ // tecla 'R'
+        r = false;
+    }
+    if(e.keyCode == 32){ // tecla 'espaço'
+        space = false;
+    }
+}
 
 var animation = function (){
 
     requestAnimationFrame(animation); //Adiciona o método na fila de renderização
 
+    /* Como a rotação funciona com matrix (para conhecimento) 
+    var count = 0; // vai fora da animação
+    if(++count >= 120){
+        let rotationMat = new THREE.Matrix4().makeRotationAxis(new THREE.Vector3(0,1,1), Math.PI/6);
+        elementos["cubo1"].applyMatrix(rotationMat);
+        count = 0; 
+    } */
+
+    /* Como a rotação funciona com quaterninho (para conhecimento) 
+    let rotation = new THREE.Quaternion().setFromEuler(new THREE.Euler(0.01,0,0.01,'XYZ'));
+    elementos["cubo1"].quaternion.multiplyQuaternions(rotation, elementos["cubo1"].quaternion); */
+    
+    if(space){
+        elementos["cubo1"].position.x += 0.2;
+    }
+    if(r){
+        elementos["cubo1"].rotation.x += 0.02;
+        elementos["cubo1"].rotation.z += 0.02;
+
+    }
+
+    /* Rotacionando o cubo 
     elementos["cubo1"].rotation.x += 0.02;
     elementos["cubo1"].rotation.z += 0.02;
 
     elementos["cubo2"].rotation.x += 0.02;
-    elementos["cubo2"].rotation.z += 0.02;
+    elementos["cubo2"].rotation.z += 0.02; */
 
-    //elementos["cubo1"].position.x += 0.5;
-
-	//elementos["cubo2"].position.x -= velocidade;
-	//if (elementos["cubo2"].position.x < -30){
-    //    velocidade *= -1;
-    //}
+    /* Movimentando o cubo
+    elementos["cubo1"].position.x += 0.5;
+	elementos["cubo2"].position.x -= velocidade;
+	if (elementos["cubo2"].position.x < -30){
+        velocidade *= -1;
+    } */
 		
     renderer.render(scene, camera);
 }
