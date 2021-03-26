@@ -72,6 +72,30 @@ var apertouBotao = function(e) {
     //console.log(e); Imprime a tecla que estou apertando
 } 
 
+// Função para aumetar e diminuir o cubo com a rodinha do mouse
+var onMouseWhell = function(e) {
+    console.log(e.deltaY);
+
+    // Função com condição ternária
+    for(let el in elementos){
+        elementos[el].scale.x += (e.deltaY > 0)?-0.1:0,1;
+        elementos[el].scale.y += (e.deltaY > 0)?-0.1:0,1;
+        elementos[el].scale.z += (e.deltaY > 0)?-0.1:0,1;
+    }
+    
+    // Mesma função que a anterior so que com if
+    /* if(e.deltaY > 0){
+        elementos["cubo1"].scale.x -= 0.1;
+        elementos["cubo1"].scale.y -= 0.1;
+        elementos["cubo1"].scale.z -= 0.1;
+    }
+    else{
+        elementos["cubo1"].scale.x += 0.1;
+        elementos["cubo1"].scale.y += 0.1;
+        elementos["cubo1"].scale.z += 0.1;
+    } */
+}
+
 //Funções para utilizar mais de uma tecla por vez
 var r = false;
 var space = false;
