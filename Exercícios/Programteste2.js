@@ -52,6 +52,7 @@ var init = function(){
     //document.addEventListener('keypress', apertouBotao);
     document.addEventListener('keydown', pressionouBotao);
     document.addEventListener('keyup', soltouBotao);
+    document.addEventListener('mousewheel', onMouseWheel);
     
 };
 
@@ -76,9 +77,9 @@ var onMouseWheel = function(e) {
 
     // Função com condição ternária
     for(let el in elementos){
-        elementos["sol"].scale.x += (e.deltaY > 0)?-0.1:0.1;
-        elementos["sol"].scale.y += (e.deltaY > 0)?-0.1:0.1;
-        elementos["sol"].scale.z += (e.deltaY > 0)?-0.1:0.1;
+        elementos[el].scale.x += (e.deltaY > 0)?-0.1:0.1;
+        elementos[el].scale.y += (e.deltaY > 0)?-0.1:0.1;
+        elementos[el].scale.z += (e.deltaY > 0)?-0.1:0.1;
     }
     
     // Mesma função que a anterior so que com if

@@ -52,9 +52,10 @@ var init = function(){
 
     animation();
 
-    document.addEventListener('keypress', apertouBotao);
+    //document.addEventListener('keypress', apertouBotao);
     document.addEventListener('keydown', pressionouBotao);
     document.addEventListener('keyup', soltouBotao);
+    document.addEventListener('mousewheel', onMouseWheel);
     
 };
 
@@ -72,7 +73,6 @@ var apertouBotao = function(e) {
     //console.log(e); Imprime a tecla que estou apertando
 } 
 
-// COM PROBLEMA
 // Função para aumetar e diminuir o cubo com a rodinha do mouse
 var onMouseWheel = function(e) {
 

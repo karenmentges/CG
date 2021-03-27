@@ -1,3 +1,11 @@
+var scene;      //Mundo Virual
+var camera;     //Área de Visualização
+var renderer;   //Responsável por renderizar
+
+var elementos = [];
+
+var velocidade = 0.5;
+
 var criaMonstro = function(){
     let puppet = [];
 
@@ -31,9 +39,91 @@ var criaMonstro = function(){
     scene.add(tronco);
 }
 
+
+//Funções para utilizar mais de uma tecla por vez
+var key_r = false;
+var key_space = false;
+var key_q = false;
+
+var pressionouBotao = function(e) {
+    if(e.keyCode == 82){ // tecla 'R'
+        key_r = true;
+    }
+    if(e.keyCode == 32){ // tecla 'espaço'
+        key_space = true;
+    }
+    if(e.keyCode == 81){ // tecla 'Q'
+        key_q = true;
+    }
+    if(e.keyCode == 189){ // tecla '-'
+        elementos["terra"].scale.x -= 0.1;
+        elementos["terra"].scale.y -= 0.1;
+        elementos["terra"].scale.z -= 0.1;
+    }
+    if(e.keyCode == 187){ // tecla '+'
+        elementos["sol"].scale.x += 0.1;
+        elementos["sol"].scale.y += 0.1;
+        elementos["sol"].scale.z += 0.1;
+    }
+}
+
+var soltouBotao = function(e) {
+    if(e.keyCode == 82){ // tecla 'R'
+        key_r = false;
+    }
+    if(e.keyCode == 32){ // tecla 'espaço'
+        key_space = false;
+    }
+    if(e.keyCode == 81){ // tecla 'Q'
+        key_q = false;
+    }
+}
+
+
+var init = function(){
+    console.log("Teste");
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 100);
+    
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    camera.position.x = 20;
+    camera.position.y = 10;
+    camera.position.z = 80; //Profundidade: (+)Aproximando e (-)Afastando
+
+    criaSisSolar();
+
+    animation();
+
+    //document.addEventListener('keypress', apertouBotao);
+    document.addEventListener('keydown', pressionouBotao);
+    document.addEventListener('keyup', soltouBotao);
+};
+
+
 velocidadeOmbroDireitoC = -0.2;
 velocidadeOmbroDireitoL = -0.2;
 var animation = function (){
+
+    requestAnimationFrame(animation); //Adiciona o método na fila de renderização
+
+    /* Rotacionando o cubo 
+    elementos["cubo1"].rotation.x += 0.02;
+    elementos["cubo1"].rotation.z += 0.02;
+
+    elementos["cubo2"].rotation.x += 0.02;
+    elementos["cubo2"].rotation.z += 0.02; */
+
+    /* Movimentando o cubo
+    elementos["cubo1"].position.x += 0.5;
+	elementos["cubo2"].position.x -= velocidade;
+	if (elementos["cubo2"].position.x < -30){
+        velocidade *= -1;
+    } */
+    
+
     if(key_space){ // movimento para frente
         if(elementos["puppet"]["pivotOmbroD"].position.x < -2.83 || elementos["puppet"]["pivotOmbroD"].position.x > 1.3){
             velocidadeOmbroDireitoC *= -1;
@@ -51,5 +141,7 @@ var animation = function (){
 
     }
 
-    
+    renderer.render(scene, camera);
 }
+
+window.onload = this.init
