@@ -7,21 +7,28 @@ var elementos = [];
 
 var velocidade = 0.5;
 
-var criasphere = function(){
+var criaSisSolar = function(){
 
-    let pink   = new THREE.Color("rgb(200,33,81)");
-    let green  = new THREE.Color("rgb(64,224,208)");
+    let sol = new THREE.Mesh(new THREE.SphereGeometry(8, 32, 32), new THREE.MeshBasicMaterial({color: 0xffff00})); 
+    sol.position.x = 20;
+    sol.position.y = 10;
+    elementos["sol"] = sol;
 
-    let sphere1 = new THREE.Mesh(new THREE.SphereGeometry(10, 10, 10), new THREE.MeshBasicMaterial({color: pink})); //Mesh(malha), junta a geometria e o material, criando uma malha de triângulos
-    sphere1.position.x = -10;
-    elementos["sphere1"] = sphere1;
+    let pivot = new THREE.Group();
+    sol.add(pivot);
+    elementos["pivot"] = pivot;
 
-    let sphere2 = new THREE.Mesh(new THREE.SphereGeometry(10, 10, 10), new THREE.MeshBasicMaterial({color: green}));
-    sphere2.position.x = 40;
-    elementos["sphere2"] = sphere2;
+    let terra = new THREE.Mesh(new THREE.SphereGeometry(1.5, 6, 6), new THREE.MeshBasicMaterial({color: 0x0000ff}));
+    pivot.add(terra);
+    terra.position.x += pivot.position.x + 20;
+    elementos["terra"] = terra;
 
-    scene.add(sphere);
-    scene.add(sphere2);
+    let marte = new THREE.Mesh(new THREE.SphereGeometry(2, 6, 6), new THREE.MeshBasicMaterial({color: 0xff0000}));
+    pivot.add(marte);
+    marte.position.x += pivot.position.x + 15;
+    elementos["marte"] = marte;
+
+    scene.add(sol);
 };
 
 
@@ -38,39 +45,40 @@ var init = function(){
     camera.position.y = 10;
     camera.position.z = 80; //Profundidade: (+)Aproximando e (-)Afastando
 
-    criaCubo();
+    criaSisSolar();
 
     animation();
 
-    document.addEventListener('keypress', apertouBotao);
+    //document.addEventListener('keypress', apertouBotao);
     document.addEventListener('keydown', pressionouBotao);
     document.addEventListener('keyup', soltouBotao);
     
 };
 
 //Função para utilizar uma tecla por vez
-var apertouBotao = function(e) {
+/* var apertouBotao = function(e) {
 
     if(e.keyCode == 114){ // tecla 'R'
-        elementos["cubo1"].rotation.x += 0.02;
-        elementos["cubo1"].rotation.z += 0.02;
+        elementos["sphere1"].rotation.x += 0.02;
+        elementos["sphere1"].rotation.z += 0.02;
     }
     if(e.keyCode == 32){ // tecla 'espaço'
-        elementos["cubo1"].position.y += 1;
+        elementos["sphere1"].position.y += 1;
     }
+    
 
     //console.log(e); Imprime a tecla que estou apertando
-} 
+} */
 
+// COM PROBLEMA
 // Função para aumetar e diminuir o cubo com a rodinha do mouse
-var onMouseWhell = function(e) {
-    console.log(e.deltaY);
+var onMouseWheel = function(e) {
 
     // Função com condição ternária
     for(let el in elementos){
-        elementos[el].scale.x += (e.deltaY > 0)?-0.1:0,1;
-        elementos[el].scale.y += (e.deltaY > 0)?-0.1:0,1;
-        elementos[el].scale.z += (e.deltaY > 0)?-0.1:0,1;
+        elementos["sol"].scale.x += (e.deltaY > 0)?-0.1:0.1;
+        elementos["sol"].scale.y += (e.deltaY > 0)?-0.1:0.1;
+        elementos["sol"].scale.z += (e.deltaY > 0)?-0.1:0.1;
     }
     
     // Mesma função que a anterior so que com if
@@ -87,24 +95,41 @@ var onMouseWhell = function(e) {
 }
 
 //Funções para utilizar mais de uma tecla por vez
-var r = false;
-var space = false;
+var key_r = false;
+var key_space = false;
+var key_q = false;
 
 var pressionouBotao = function(e) {
     if(e.keyCode == 82){ // tecla 'R'
-        r = true;
+        key_r = true;
     }
     if(e.keyCode == 32){ // tecla 'espaço'
-        space = true;
+        key_space = true;
+    }
+    if(e.keyCode == 81){ // tecla 'Q'
+        key_q = true;
+    }
+    if(e.keyCode == 189){ // tecla '-'
+        elementos["terra"].scale.x -= 0.1;
+        elementos["terra"].scale.y -= 0.1;
+        elementos["terra"].scale.z -= 0.1;
+    }
+    if(e.keyCode == 187){ // tecla '+'
+        elementos["sol"].scale.x += 0.1;
+        elementos["sol"].scale.y += 0.1;
+        elementos["sol"].scale.z += 0.1;
     }
 }
 
 var soltouBotao = function(e) {
     if(e.keyCode == 82){ // tecla 'R'
-        r = false;
+        key_r = false;
     }
     if(e.keyCode == 32){ // tecla 'espaço'
-        space = false;
+        key_space = false;
+    }
+    if(e.keyCode == 81){ // tecla 'Q'
+        key_q = false;
     }
 }
 
@@ -124,13 +149,16 @@ var animation = function (){
     let rotation = new THREE.Quaternion().setFromEuler(new THREE.Euler(0.01,0,0.01,'XYZ'));
     elementos["cubo1"].quaternion.multiplyQuaternions(rotation, elementos["cubo1"].quaternion); */
     
-    if(space){
-        elementos["cubo1"].position.x += 0.2;
+    if(key_space){
+        elementos["pivot"].position.x += 0.01;
     }
-    if(r){
-        elementos["cubo1"].rotation.x += 0.02;
-        elementos["cubo1"].rotation.z += 0.02;
+    if(key_r){
+        elementos["pivot"].rotation.x += 0.01;
+        elementos["pivot"].rotation.z += 0.01;
 
+    }
+    if(key_q){
+        elementos["pivot"].rotation.z += 0.01;
     }
 
     /* Rotacionando o cubo 

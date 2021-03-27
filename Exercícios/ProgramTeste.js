@@ -72,15 +72,15 @@ var apertouBotao = function(e) {
     //console.log(e); Imprime a tecla que estou apertando
 } 
 
+// COM PROBLEMA
 // Função para aumetar e diminuir o cubo com a rodinha do mouse
-var onMouseWhell = function(e) {
-    console.log(e.deltaY);
+var onMouseWheel = function(e) {
 
     // Função com condição ternária
     for(let el in elementos){
-        elementos[el].scale.x += (e.deltaY > 0)?-0.1:0,1;
-        elementos[el].scale.y += (e.deltaY > 0)?-0.1:0,1;
-        elementos[el].scale.z += (e.deltaY > 0)?-0.1:0,1;
+        elementos[el].scale.x += (e.deltaY > 0)?-0.1:0.1;
+        elementos[el].scale.y += (e.deltaY > 0)?-0.1:0.1;
+        elementos[el].scale.z += (e.deltaY > 0)?-0.1:0.1;
     }
     
     // Mesma função que a anterior so que com if
