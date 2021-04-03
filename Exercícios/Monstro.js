@@ -58,12 +58,22 @@ var criaMonstro = function(){
     antebracoD.position.y -= 2.2;
 
 
+    // Ligação da perna direita
+    let ligacaoD =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
+    puppet["ligacaoD"] = ligacaoD;
+    tronco.add(ligacaoD);
+    ligacaoD.position.x = tronco.position.y + 1.5;
+    ligacaoD.position.y = tronco.position.y - 5;
+
+    let pivotPernaD = new THREE.Group();
+    puppet["pivotPernaD"] = pivotPernaD;
+    ligacaoD.add(pivotPernaD);
+
     // Coxa direita
     let coxaD = new THREE.Mesh(new THREE.BoxGeometry(1, 3, 1), new THREE.MeshPhongMaterial({color: 0x08E8DE}));
     puppet["coxaD"] = coxaD;
-    tronco.add(coxaD);
-    coxaD.position.x = tronco.position.y + 1.5;
-    coxaD.position.y = tronco.position.y - 5;
+    ligacaoD.add(coxaD);
+    coxaD.position.y -= 3;
 
     // Joelho direito
     let joelhoD =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
@@ -118,13 +128,23 @@ var criaMonstro = function(){
     antebracoE.position.y -= 2.2;
 
 
+    // Ligação da perna esquerda
+    let ligacaoE =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
+    puppet["ligacaoE"] = ligacaoE;
+    tronco.add(ligacaoE);
+    ligacaoE.position.x = tronco.position.y - 1.5;
+    ligacaoE.position.y = tronco.position.y - 5;
+
+    let pivotPernaE = new THREE.Group();
+    puppet["pivotPernaE"] = pivotPernaE;
+    ligacaoE.add(pivotPernaE);
+
     // Coxa esquerda
     let coxaE = new THREE.Mesh(new THREE.BoxGeometry(1, 3, 1), new THREE.MeshPhongMaterial({color: 0x08E8DE}));
     puppet["coxaE"] = coxaE;
-    tronco.add(coxaE);
-    coxaE.position.x = tronco.position.y - 1.5;
-    coxaE.position.y = tronco.position.y - 5;
-
+    ligacaoE.add(coxaE);
+    coxaE.position.y -= 3;
+    
     // Joelho esquerdo
     let joelhoE =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
     puppet["joelhoE"] = joelhoE;
@@ -233,11 +253,52 @@ var onMouseWheel = function (e){
 
 
 var count = 0;
-velocidadeOmbroDireitoC = -0.1;
-velocidadeOmbroDireitoL = -0.1;
+velocidadeOmbroDireito = -0.01;
+velocidadeCotoveloDireito = -0.0055555;
+velocidadeOmbroEsquerdo = 0.01;
+velocidadeCotoveloEsquerdo = 0.0055555;
+velocidadePernaDireita = 0.01;
+velocidadePernaEsquerda = -0.01;
 var animation = function (){
 
     requestAnimationFrame(animation); //Adiciona o método na fila de renderização
+
+
+    // Rotação do braço
+    if (elementos["puppet"]["pivotOmbroD"].rotation.x < -0.4 || elementos["puppet"]["pivotOmbroD"].rotation.x > 0.4){
+        velocidadeOmbroDireito*=-1;
+    }
+	elementos["puppet"]["pivotOmbroD"].rotation.x += velocidadeOmbroDireito;
+
+    if (elementos["puppet"]["pivotOmbroE"].rotation.x < -0.4 || elementos["puppet"]["pivotOmbroE"].rotation.x > 0.4){
+        velocidadeOmbroEsquerdo*=-1;
+    }
+	elementos["puppet"]["pivotOmbroE"].rotation.x += velocidadeOmbroEsquerdo;
+    
+
+    // Rotação do antebraço
+    if (elementos["puppet"]["pivotCotoveloD"].rotation.x < -0.5 || elementos["puppet"]["pivotCotoveloD"].rotation.x > 0){
+        velocidadeCotoveloDireito*=-1;
+    }
+	elementos["puppet"]["pivotCotoveloD"].rotation.x += velocidadeCotoveloDireito;
+
+    if (elementos["puppet"]["pivotCotoveloE"].rotation.x < -0.5 || elementos["puppet"]["pivotCotoveloE"].rotation.x > 0){
+        velocidadeCotoveloEsquerdo*=-1;
+    }
+	elementos["puppet"]["pivotCotoveloE"].rotation.x += velocidadeCotoveloEsquerdo;
+    
+    
+    // Rotação da perna
+    if (elementos["puppet"]["pivotPernaD"].rotation.x < -0.4 || elementos["puppet"]["pivotPernaD"].rotation.x > 0.4){
+        velocidadePernaDireita*=-1;
+    }
+    elementos["puppet"]["pivotPernaD"].rotation.x += velocidadePernaDireita;
+
+    if (elementos["puppet"]["pivotPernaE"].rotation.x < -0.4 || elementos["puppet"]["pivotPernaE"].rotation.x > 0.4){
+        velocidadePernaEsquerda*=-1;
+    }
+    elementos["puppet"]["pivotPernaE"].rotation.x += velocidadePernaEsquerda;
+
 
     /* Rotacionando o cubo 
     elementos["cubo1"].rotation.x += 0.02;
@@ -253,23 +314,6 @@ var animation = function (){
         velocidade *= -1;
     } */
     
-    /*
-    if(key_space){ // movimento para frente
-        if(elementos["puppet"]["pivotOmbroD"].position.x < -2.83 || elementos["puppet"]["pivotOmbroD"].position.x > 1.3){
-            velocidadeOmbroDireitoC *= -1;
-        }
-        elementos["puppet"]["pivotOmbroD"].position.x += velocidadeOmbroDireitoC;
-        console.log(elementos["puppet"]["pivotOmbroD"].position.x);
-        
-    }
-    if(key_r){ // movimento para o lado
-        if(elementos["puppet"]["pivotOmbroD"].position.x < 0 || elementos["puppet"]["pivotOmbroD"].position.x > 1.4){
-            velocidadeOmbroDireitoL *= -1;
-        }
-        elementos["puppet"]["pivotOmbroD"].position.z += velocidadeOmbroDireitoL;
-        console.log(elementos["puppet"]["pivotOmbroD"].position.x);
-
-    } */
 
     renderer.render(scene, camera);
 }
