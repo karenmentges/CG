@@ -15,68 +15,28 @@ var criaMonstro = function(){
     let cabeca = new THREE.Mesh(new THREE.SphereGeometry(2, 32, 32), new THREE.MeshBasicMaterial({color: 0x0000ff}));
     puppet["cabeca"] = cabeca;
     tronco.add(cabeca);
-    cabeca.position.y = tronco.position.y + 5;
+    cabeca.position.y = tronco.position.y + 6;
 
     // Braço direito
     let ombroD =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshBasicMaterial({color: 0x0000ff}));
     puppet["ombroD"] = ombroD;
     tronco.add(ombroD);
-    ombroD.position.x = tronco.position.x + 3;
+    ombroD.position.x = tronco.position.y + 3;
     ombroD.position.y = tronco.position.y + 3;
 
     let pivotOmbroD = new THREE.Group();
     puppet["pivotOmbroD"] = pivotOmbroD;
     ombroD.add(pivotOmbroD);
 
-    let braçoD = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshBasicMaterial({color: 0x0000ff}));
-    puppet["braçoD"] = braçoD;
-    pivotOmbroD.add(braçoD);
-    pivotOmbroD.position.y = tronco.position.y - 2,7;
+    let bracoD = new THREE.Mesh(new THREE.SphereGeometry(1, 4, 1), new THREE.MeshBasicMaterial({color: 0x0000ff}));
+    puppet["bracoD"] = bracoD;
+    pivotOmbroD.add(bracoD);
+    bracoD.position.y -= 2.7;
 
 
 
     elementos["puppet"] = puppet;
     scene.add(tronco);
-}
-
-
-//Funções para utilizar mais de uma tecla por vez
-var key_r = false;
-var key_space = false;
-var key_q = false;
-
-var pressionouBotao = function(e) {
-    if(e.keyCode == 82){ // tecla 'R'
-        key_r = true;
-    }
-    if(e.keyCode == 32){ // tecla 'espaço'
-        key_space = true;
-    }
-    if(e.keyCode == 81){ // tecla 'Q'
-        key_q = true;
-    }
-    if(e.keyCode == 189){ // tecla '-'
-        elementos["terra"].scale.x -= 0.1;
-        elementos["terra"].scale.y -= 0.1;
-        elementos["terra"].scale.z -= 0.1;
-    }
-    if(e.keyCode == 187){ // tecla '+'
-        elementos["sol"].scale.x += 0.1;
-        elementos["sol"].scale.y += 0.1;
-        elementos["sol"].scale.z += 0.1;
-    }
-}
-
-var soltouBotao = function(e) {
-    if(e.keyCode == 82){ // tecla 'R'
-        key_r = false;
-    }
-    if(e.keyCode == 32){ // tecla 'espaço'
-        key_space = false;
-    }
-    if(e.keyCode == 81){ // tecla 'Q'
-        key_q = false;
-    }
 }
 
 
@@ -89,22 +49,19 @@ var init = function(){
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    camera.position.x = 20;
-    camera.position.y = 10;
+    camera.position.x = 0;
+    camera.position.y = 2;
     camera.position.z = 80; //Profundidade: (+)Aproximando e (-)Afastando
 
-    criaSisSolar();
+    criaMonstro();
 
     animation();
 
-    //document.addEventListener('keypress', apertouBotao);
-    document.addEventListener('keydown', pressionouBotao);
-    document.addEventListener('keyup', soltouBotao);
 };
 
-
-velocidadeOmbroDireitoC = -0.2;
-velocidadeOmbroDireitoL = -0.2;
+var count = 0;
+velocidadeOmbroDireitoC = -0.1;
+velocidadeOmbroDireitoL = -0.1;
 var animation = function (){
 
     requestAnimationFrame(animation); //Adiciona o método na fila de renderização
@@ -142,6 +99,10 @@ var animation = function (){
     }
 
     renderer.render(scene, camera);
+}
+
+function paraRadianos(angulo){
+	return angulo * (Math.PI/180);
 }
 
 window.onload = this.init
