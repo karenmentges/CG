@@ -13,7 +13,7 @@ var criaMonstro = function(){
     let pink   = new THREE.Color("rgb(200,33,81)");
     let purple = new THREE.Color("rgb(148,0,211)");
 
-    let tronco = new THREE.Mesh(new THREE.BoxGeometry(4, 7, 2), new THREE.MeshPhongMaterial({color: 0x008080}));
+    let tronco = new THREE.Mesh(new THREE.BoxGeometry(4.4, 7, 2), new THREE.MeshPhongMaterial({color: 0x008080}));
     puppet["tronco"] = tronco;
 
     let cabeca = new THREE.Mesh(new THREE.SphereGeometry(2, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
@@ -28,7 +28,7 @@ var criaMonstro = function(){
     let ombroD =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
     puppet["ombroD"] = ombroD;
     tronco.add(ombroD);
-    ombroD.position.x = tronco.position.y + 3;
+    ombroD.position.x = tronco.position.y + 3.2;
     ombroD.position.y = tronco.position.y + 3;
 
     let pivotOmbroD = new THREE.Group();
@@ -62,8 +62,8 @@ var criaMonstro = function(){
     let ligacaoD =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
     puppet["ligacaoD"] = ligacaoD;
     tronco.add(ligacaoD);
-    ligacaoD.position.x = tronco.position.y + 1.5;
-    ligacaoD.position.y = tronco.position.y - 5;
+    ligacaoD.position.x = tronco.position.y + 1.2;
+    ligacaoD.position.y = tronco.position.y - 3.5;
 
     let pivotPernaD = new THREE.Group();
     puppet["pivotPernaD"] = pivotPernaD;
@@ -72,14 +72,14 @@ var criaMonstro = function(){
     // Coxa direita
     let coxaD = new THREE.Mesh(new THREE.BoxGeometry(1, 3, 1), new THREE.MeshPhongMaterial({color: 0x08E8DE}));
     puppet["coxaD"] = coxaD;
-    ligacaoD.add(coxaD);
-    coxaD.position.y -= 3;
+    pivotPernaD.add(coxaD);
+    coxaD.position.y -= 2;
 
     // Joelho direito
     let joelhoD =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
     puppet["joelhoD"] = joelhoD;
     coxaD.add(joelhoD);
-    joelhoD.position.y = coxaD.position.y + 3;
+    joelhoD.position.y = coxaD.position.y;
 
     let pivotJoelhoD = new THREE.Group();
     puppet["pivotJoelhoD"] = pivotJoelhoD;
@@ -98,7 +98,7 @@ var criaMonstro = function(){
     let ombroE =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
     puppet["ombroE"] = ombroE;
     tronco.add(ombroE);
-    ombroE.position.x = tronco.position.y - 3;
+    ombroE.position.x = tronco.position.y - 3.2;
     ombroE.position.y = tronco.position.y + 3;
 
     let pivotOmbroE = new THREE.Group();
@@ -132,8 +132,8 @@ var criaMonstro = function(){
     let ligacaoE =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
     puppet["ligacaoE"] = ligacaoE;
     tronco.add(ligacaoE);
-    ligacaoE.position.x = tronco.position.y - 1.5;
-    ligacaoE.position.y = tronco.position.y - 5;
+    ligacaoE.position.x = tronco.position.y - 1.2;
+    ligacaoE.position.y = tronco.position.y - 3.5;
 
     let pivotPernaE = new THREE.Group();
     puppet["pivotPernaE"] = pivotPernaE;
@@ -142,14 +142,14 @@ var criaMonstro = function(){
     // Coxa esquerda
     let coxaE = new THREE.Mesh(new THREE.BoxGeometry(1, 3, 1), new THREE.MeshPhongMaterial({color: 0x08E8DE}));
     puppet["coxaE"] = coxaE;
-    ligacaoE.add(coxaE);
-    coxaE.position.y -= 3;
+    pivotPernaE.add(coxaE);
+    coxaE.position.y -= 2;
     
     // Joelho esquerdo
     let joelhoE =  new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshPhongMaterial({color: 0xAFEEEE}));
     puppet["joelhoE"] = joelhoE;
     coxaE.add(joelhoE);
-    joelhoE.position.y = coxaE.position.y + 3;
+    joelhoE.position.y = coxaE.position.y;
 
     let pivotJoelhoE = new THREE.Group();
     puppet["pivotJoelhoE"] = pivotJoelhoE;
@@ -196,6 +196,7 @@ var init = function(){
     criaMonstro();
 
     animation();
+
 
     // Verificar como está o monstro
     document.addEventListener('mousewheel', onMouseWheel);
@@ -250,20 +251,20 @@ var onMouseWheel = function (e){
 }
 
 
-
-
-var count = 0;
+velocidadeinicial = -0.05;
 velocidadeOmbroDireito = -0.01;
-velocidadeCotoveloDireito = -0.0055555;
+velocidadeCotoveloDireito = -0.005;
 velocidadeOmbroEsquerdo = 0.01;
-velocidadeCotoveloEsquerdo = 0.0055555;
-velocidadePernaDireita = 0.01;
-velocidadePernaEsquerda = -0.01;
+velocidadeCotoveloEsquerdo = 0.005;
+velocidadePernaDireita = 0.0075;
+velocidadeJoelhoDireito = 0.015;
+velocidadePernaEsquerda = -0.0075;
+velocidadeJoelhoEsquerdo = -0.015;
+velocidadeTronco = 0.003;
 var animation = function (){
 
     requestAnimationFrame(animation); //Adiciona o método na fila de renderização
-
-
+        
     // Rotação do braço
     if (elementos["puppet"]["pivotOmbroD"].rotation.x < -0.4 || elementos["puppet"]["pivotOmbroD"].rotation.x > 0.4){
         velocidadeOmbroDireito*=-1;
@@ -277,43 +278,51 @@ var animation = function (){
     
 
     // Rotação do antebraço
-    if (elementos["puppet"]["pivotCotoveloD"].rotation.x < -0.5 || elementos["puppet"]["pivotCotoveloD"].rotation.x > 0){
+    if (elementos["puppet"]["pivotCotoveloD"].rotation.x < -0.4 || elementos["puppet"]["pivotCotoveloD"].rotation.x > 0){
         velocidadeCotoveloDireito*=-1;
     }
 	elementos["puppet"]["pivotCotoveloD"].rotation.x += velocidadeCotoveloDireito;
 
-    if (elementos["puppet"]["pivotCotoveloE"].rotation.x < -0.5 || elementos["puppet"]["pivotCotoveloE"].rotation.x > 0){
+    if (elementos["puppet"]["pivotCotoveloE"].rotation.x < -0.4 || elementos["puppet"]["pivotCotoveloE"].rotation.x > 0){
         velocidadeCotoveloEsquerdo*=-1;
     }
 	elementos["puppet"]["pivotCotoveloE"].rotation.x += velocidadeCotoveloEsquerdo;
     
-    
+
     // Rotação da perna
-    if (elementos["puppet"]["pivotPernaD"].rotation.x < -0.4 || elementos["puppet"]["pivotPernaD"].rotation.x > 0.4){
+    if (elementos["puppet"]["pivotPernaD"].rotation.x < -0.3 || elementos["puppet"]["pivotPernaD"].rotation.x > 0.3){
         velocidadePernaDireita*=-1;
     }
     elementos["puppet"]["pivotPernaD"].rotation.x += velocidadePernaDireita;
 
-    if (elementos["puppet"]["pivotPernaE"].rotation.x < -0.4 || elementos["puppet"]["pivotPernaE"].rotation.x > 0.4){
+    if (elementos["puppet"]["pivotPernaE"].rotation.x < -0.3 || elementos["puppet"]["pivotPernaE"].rotation.x > 0.3){
         velocidadePernaEsquerda*=-1;
     }
     elementos["puppet"]["pivotPernaE"].rotation.x += velocidadePernaEsquerda;
 
 
-    /* Rotacionando o cubo 
-    elementos["cubo1"].rotation.x += 0.02;
-    elementos["cubo1"].rotation.z += 0.02;
+    // Rotação do joelho
+    if (elementos["puppet"]["pivotJoelhoD"].rotation.x == 0){
+        elementos["puppet"]["pivotJoelhoD"].rotation.x += velocidadeinicial;
+    }
+    else if (elementos["puppet"]["pivotJoelhoD"].rotation.x < -0.2 || elementos["puppet"]["pivotJoelhoD"].rotation.x > 1.0){
+        velocidadeJoelhoDireito*=-1;
+    }
+    elementos["puppet"]["pivotJoelhoD"].rotation.x += velocidadeJoelhoDireito;
 
-    elementos["cubo2"].rotation.x += 0.02;
-    elementos["cubo2"].rotation.z += 0.02; */
+    if (elementos["puppet"]["pivotJoelhoE"].rotation.x < -0.2 || elementos["puppet"]["pivotJoelhoE"].rotation.x > 1.0){
+        velocidadeJoelhoEsquerdo*=-1;
+    }
+    elementos["puppet"]["pivotJoelhoE"].rotation.x += velocidadeJoelhoEsquerdo;
 
-    /* Movimentando o cubo
-    elementos["cubo1"].position.x += 0.5;
-	elementos["cubo2"].position.x -= velocidade;
-	if (elementos["cubo2"].position.x < -30){
-        velocidade *= -1;
-    } */
-    
+
+
+    // Rotação do tronco
+    if (elementos["puppet"]["tronco"].rotation.y < 0|| elementos["puppet"]["tronco"].rotation.y > 1.5){
+        velocidadeTronco*=-1;
+    }
+    elementos["puppet"]["tronco"].rotation.y += velocidadeTronco;
+
 
     renderer.render(scene, camera);
 }
