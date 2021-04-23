@@ -1,5 +1,5 @@
 
-var scene;      //Mundo Virual
+var scene;      //Mundo Virtual
 var camera;     //Área de Visualização
 var renderer;   //Responsável por renderizar
 
@@ -35,14 +35,18 @@ var criaCubo = function(){
 };
 
 
-var init = function(){
-    console.log("Teste");
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 100);
-    
-    renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+r init = function(){
+  console.log("Teste");
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(40, // view angle
+                                      window.innerWidth/window.innerHeight, // aspect ratio
+                                      1,   // near
+                                      100  // far
+                                      );
+  
+  renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
 
     camera.position.x = 20;
     camera.position.y = 10;
