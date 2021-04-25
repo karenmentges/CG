@@ -62,15 +62,13 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 8;
 			obj.scale.y = 8;
 			obj.scale.z = 8;
-			obj.scale.x = 8;
-
+			
 			obj.position.x = -24;
 			obj.position.y = -5;
 			obj.position.z = -50;
-
-			//obj.rotation.x-=1.35;
 
 			scene.add(obj);
 			console.log("Carregou Lareira");
@@ -85,7 +83,7 @@ var objLoading = function(){
 	);
 
 
-	// Carregando Poltrona
+	// Carregando Poltrona 1
 	let loaderFBX2 = new THREE.FBXLoader();
 	loaderFBX2.load(
 		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Poltrona.fbx',//arquivo que vamos buscar
@@ -100,12 +98,12 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 0.2;
 			obj.scale.y = 0.2;
 			obj.scale.z = 0.2;
-			obj.scale.x = 0.2;
 
-			obj.position.y = -5;
 			obj.position.x = -40;
+			obj.position.y = -5;
 			obj.position.z += 20;
 
 			obj.rotation.y += 0.9;
@@ -138,12 +136,12 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 0.2;
 			obj.scale.y = 0.2;
 			obj.scale.z = 0.2;
-			obj.scale.x = 0.2;
 
-			obj.position.y = -5;
 			obj.position.x = -50;
+			obj.position.y = -5;
 			obj.position.z += 50;
 
 			scene.add(obj);
@@ -159,7 +157,7 @@ var objLoading = function(){
 	);
 
 
-	// Carregando Poltrona
+	// Carregando Poltrona 2
 	let loaderFBX4 = new THREE.FBXLoader();
 	loaderFBX4.load(
 		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Poltrona.fbx',//arquivo que vamos buscar
@@ -174,12 +172,12 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 0.2;
 			obj.scale.y = 0.2;
 			obj.scale.z = 0.2;
-			obj.scale.x = 0.2;
 
-			obj.position.y = -5;
 			obj.position.x = -40;
+			obj.position.y = -5;
 			obj.position.z += 80;
 
 			obj.rotation.y += 2.2;
@@ -212,13 +210,13 @@ var objLoading = function(){
 					}
 				}
 			);
-
+			
+			obj.scale.x = 0.18;
 			obj.scale.y = 0.18;
 			obj.scale.z = 0.18;
-			obj.scale.x = 0.18;
 
-			obj.position.y = -5;
 			obj.position.x = 50;
+			obj.position.y = -5;
 			obj.position.z += 50;
 
 			obj.rotation.x += 1.55;
@@ -251,12 +249,12 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 0.3;
 			obj.scale.y = 0.3;
 			obj.scale.z = 0.3;
-			obj.scale.x = 0.3;
-
-			obj.position.y = 30;
+			
 			obj.position.x = 0;
+			obj.position.y = 30;
 			obj.position.z += 50;
 
 			scene.add(obj);
@@ -275,7 +273,7 @@ var objLoading = function(){
 	// Carregando Ratos
 	let loaderFBX7 = new THREE.FBXLoader();
 	loaderFBX7.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Rato.fbx',//arquivo que vamos buscar
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Ratos.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['ratos'] = obj;
@@ -287,12 +285,12 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 1;
 			obj.scale.y = 1;
 			obj.scale.z = 1;
-			obj.scale.x = 1;
-
-			obj.position.y = 36;
+			
 			obj.position.x = -5;
+			obj.position.y = 36;
 			obj.position.z += 49;
 			
 			obj.rotation.y += 3.1;
@@ -325,12 +323,12 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 0.01;
 			obj.scale.y = 0.01;
 			obj.scale.z = 0.01;
-			obj.scale.x = 0.01;
-
-			obj.position.y = -0.5;
+			
 			obj.position.x = -50;
+			obj.position.y = -0.5;
 			obj.position.z += 50.5;
 			
 			obj.rotation.y -= 1.5;
@@ -349,8 +347,8 @@ var objLoading = function(){
 
 
 	// Carregando Gato 2
-	loader1 = new THREE.OBJLoader();
-	loader1.load(
+	loader2 = new THREE.OBJLoader();
+	loader2.load(
 		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
@@ -363,9 +361,9 @@ var objLoading = function(){
 				}
 			);
 
+			obj.scale.x = 0.15;
 			obj.scale.y = 0.15;
 			obj.scale.z = 0.15;
-			obj.scale.x = 0.15;
 
 			obj.position.x = 45;
 			obj.position.y = 8;
@@ -387,8 +385,8 @@ var objLoading = function(){
 
 
 	// Carregando Gato 3
-	loader1 = new THREE.OBJLoader();
-	loader1.load(
+	loader3 = new THREE.OBJLoader();
+	loader3.load(
 		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato3.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
@@ -425,8 +423,8 @@ var objLoading = function(){
 
 
 	// Carregando Gato 4
-	loader1 = new THREE.OBJLoader();
-	loader1.load(
+	loader4 = new THREE.OBJLoader();
+	loader4.load(
 		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato4.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
@@ -545,6 +543,7 @@ var createGui = function (){
 }
 
 var init = function (){
+	
 	scene = new THREE.Scene();
 	scene.background = new THREE.CubeTextureLoader()
 	.setPath( 'texture/' )
@@ -563,7 +562,7 @@ var init = function (){
 						window.innerWidth/window.innerHeight, //aspect ratio
 						1, //near
 						300 //far
-					);
+					    );
 	
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -587,6 +586,7 @@ var init = function (){
 		new THREE.PlaneBufferGeometry(1000,1000),
 		new THREE.MeshBasicMaterial({color: 0x999999})
 	);
+
 	ground.rotation.x = - Math.PI/2;
 	ground.position.y-=7.5;
 	scene.add(ground);
@@ -595,8 +595,6 @@ var init = function (){
 	document.addEventListener('mousemove', onMouseMove);
 	document.addEventListener('mousedown', onMouseClick);
 	document.addEventListener('mouseup', onMouseUp);
-
-	
 };
 
 var clicando = false;
@@ -606,30 +604,22 @@ var mouserPosAnterior = {
 }
 
 var onMouseMove = function(e){
+
 	let diferencaMovimento = {
 		x: e.offsetX - mouserPosAnterior.x,
 		y: e.offsetY - mouserPosAnterior.y
 	}
 
 	if (clicando){
-
-		//  let angulosQuaternion = new THREE.Quaternion().setFromEuler(
-		//  	new THREE.Euler (	paraRadianos(diferencaMovimento.y)*0.5,
-		//  					    paraRadianos(diferencaMovimento.x)*0.5,
-		//  						0,
-		//  						'XYZ')
-		//  );
-		//  elementos["puppet"]["tronco"].quaternion.multiplyQuaternions(angulosQuaternion, elementos["puppet"]["tronco"].quaternion);
-
 		camera.rotation.x += paraRadianos(diferencaMovimento.y)*0.1;
 		camera.rotation.y += paraRadianos(diferencaMovimento.x)*0.1;
-
-
 	}
+
 	mouserPosAnterior = {
 		x: e.offsetX,
 		y: e.offsetY
 	}
+
 };
 
 var onMouseClick = function(e){
@@ -642,8 +632,11 @@ var onMouseUp = function(e){
 
 var animation = function (){
 	requestAnimationFrame(animation); //adiciona o método na fila de renderização
-
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
+}
+
+function paraRadianos(angulo){
+	return angulo * (Math.PI/180);
 }
 
 window.onload = this.init
