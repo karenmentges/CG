@@ -13,27 +13,64 @@ var geometriaA;
 
 
 var objLoading = function(){
-	loader = new THREE.OBJLoader();
 
-	loader.load(
-		'/home/karenmentges/Área de Trabalho/CG/assets/triceratops.obj',//arquivo que vamos buscar
+	// Carregando Cachorro
+	let loaderFBX1 = new THREE.FBXLoader();
+	loaderFBX1.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Cachorro.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['tri'] = obj;
+			elementos['cachorro'] = obj;
 
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0xbe6262");
+						child.material.color.setHex("0xD69A3A");
 					}
 				}
 			);
 
-			obj.scale.y = 2;
-			obj.scale.z = 2;
-			obj.scale.x = 2;
+			obj.scale.x = 0.025;
+			obj.scale.y = 0.025;
+			obj.scale.z = 0.025;
+			
+			obj.position.x = 0;
+			obj.position.y = -5;
+			obj.position.z = 15;
 
-			obj.position.y = -6;
-			obj.position.z = 2;
+			scene.add(obj);
+			console.log("Carregou Cachorro");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+    // Carregando Lareira
+	loader = new THREE.OBJLoader();
+	loader.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Lareira.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['lareira'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material.color.setHex("0x808080");
+					}
+				}
+			);
+
+			obj.scale.y = 5;
+			obj.scale.z = 5;
+			obj.scale.x = 5;
+
+			obj.position.x = 0;
+			obj.position.y = -5;
+			obj.position.z = 0;
 
 			//obj.rotation.x-=1.35;
 
@@ -49,33 +86,33 @@ var objLoading = function(){
 		}//o que acontece se der merda.
 	);
 
-	//carregando Ovelha
+
+
+	// Carregando Bide
 	let loaderFBX = new THREE.FBXLoader();
 	loaderFBX.load(
-		'/home/karenmentges/Área de Trabalho/CG/assets/Sheep.fbx',//arquivo que vamos buscar
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Bide.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['ove'] = obj;
+			elementos['bide'] = obj;
 
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0xbe62be");
+						child.material.color.setHex("0x303030");
 					}
 				}
 			);
 
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
+			obj.scale.y = 0.2;
+			obj.scale.z = 0.2;
+			obj.scale.x = 0.2;
 
 			obj.position.y = -5;
-			obj.position.x = -20;
-			obj.position.z = 0;
-
-			//obj.rotation.x-=1.35;
+			obj.position.x = -80;
+			obj.position.z += 50;
 
 			scene.add(obj);
-			console.log("Carregou Ovelha");
+			console.log("Carregou Bide");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -97,83 +134,6 @@ var godSaysLightsOn = function (){
 	scene.add(new THREE.AmbientLight(0xffffff));
 
 }
-
-
-var criaMonstro = function (){
-	let puppet=[];
-
-	let red = 	new THREE.Color(1,0,0);
-	let green = new THREE.Color(0,1,0);
-	let blue = 	new THREE.Color(0,0,1);
-	let cores = [red, green, blue];
-	let materials = [
-		new THREE.MeshBasicMaterial({color: blue}),
-		new THREE.MeshBasicMaterial({color: blue}),
-		new THREE.MeshBasicMaterial({color: blue}),
-		new THREE.MeshBasicMaterial({color: blue}),
-		new THREE.MeshBasicMaterial({color: green}),
-		new THREE.MeshBasicMaterial({color: blue})
-	];
-
-	let tronco = new THREE.Mesh(new THREE.BoxGeometry(4, 7, 2), materials);
-	puppet["tronco"] = tronco;
-
-	let cabeca = new THREE.Mesh(new THREE.SphereGeometry(2, 32, 32), new THREE.MeshBasicMaterial({color: blue}));
-	puppet["cabeca"] = cabeca;
-	tronco.add(cabeca);
-	cabeca.position.y=tronco.position.y+6;
-
-	//bracoDireito
-	let ombroD = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshBasicMaterial({color: 0xffffff}));
-	puppet["ombroD"] = ombroD;
-	tronco.add(ombroD);
-	ombroD.position.y= tronco.position.y+3;
-	ombroD.position.x= tronco.position.y+3;
-	
-	let pivotOmbroD = new THREE.Group();
-	puppet["pivotOmbroD"] = pivotOmbroD;
-	ombroD.add(pivotOmbroD);
-	
-	let bracoD = new THREE.Mesh(new THREE.BoxGeometry(1, 4, 1), new THREE.MeshBasicMaterial({color: red}));
-	puppet["bracoD"] = bracoD;
-	pivotOmbroD.add(bracoD)
-	bracoD.position.y-=2.7;
-
-
-	let ombroE = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), new THREE.MeshBasicMaterial({color: 0xffffff}));
-	puppet["ombroE"] = ombroE;
-	tronco.add(ombroE);
-	ombroE.position.y= tronco.position.y+3;
-	ombroE.position.x= tronco.position.x-3;	
-	let pivotOmbroE = new THREE.Group();
-	puppet["pivotOmbroE"] = pivotOmbroE;
-	ombroE.add(pivotOmbroE);
-	let bracoE = new THREE.Mesh(new THREE.BoxGeometry(1, 4, 1), new THREE.MeshBasicMaterial({color: red}));
-	puppet["bracoE"] = bracoE;
-	pivotOmbroE.add(bracoE)
-	bracoE.position.y-=2.7;
-
-
-	let pernaE = new THREE.Mesh(new THREE.BoxGeometry(1, 6, 1), new THREE.MeshBasicMaterial({color: red}));
-	puppet["pernaE"] = pernaE;
-	tronco.add(pernaE)
-	pernaE.position.y-=6.7;
-	pernaE.position.x-=1.5;
-
-	let pernaB = new THREE.Mesh(new THREE.BoxGeometry(1, 6, 1), new THREE.MeshBasicMaterial({color: red}));
-	puppet["pernaB"] = pernaB;
-	tronco.add(pernaB)
-	pernaB.position.y-=6.7;
-	pernaB.position.x+=1.5;
-
-
-
-
-
-	elementos["puppet"] = puppet;
-	scene.add(tronco);
-
-};
 
 var createGui = function (){
 	const gui = new dat.GUI();
@@ -241,18 +201,22 @@ var createGui = function (){
 		}
 	);
 
-
-	//gui.add(parametrosGUI, 'b').name("Variavel2");
-
-	//scene.add(gui);
 	gui.open();
 
 }
 
 var init = function (){
 	scene = new THREE.Scene();
-	scene.background = new THREE.Color(0x00BFFF)
-	
+	scene.background = new THREE.CubeTextureLoader()
+	.setPath( 'texture/' )
+	.load( [
+		'px.png',
+		'nx.png',
+		'py.png',
+		'ny.png',
+		'pz.png',
+		'nz.png'
+	] );
 	
 //	Camera em perspectiva
 	camera = new THREE.PerspectiveCamera(
@@ -261,20 +225,6 @@ var init = function (){
 						1, //near
 						300 //far
 					);
-
-	//Projeção paralela.
-	// camera = new THREE.OrthographicCamera(
-	// 	window.innerWidth/2,
-	// 	-window.innerWidth/2,
-	// 	window.innerHeight/2,
-	// 	-window.innerHeight/2,
-	// 	0.11,
-	// 	90
-	// );
-
-	// geometriaA = new THREE.Mesh(new THREE.BoxGeometry(4, 4, 4), new THREE.MeshBasicMaterial({ color: 0xff0000}));
-	// geometriaA.position.x = -8;
-	// scene.add(geometriaA);
 	
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -286,9 +236,7 @@ var init = function (){
 	
 	godSaysLightsOn();
 
-	createGui();
-
-	//criaMonstro();	
+	createGui();	
 
 	objLoading();
 
@@ -298,7 +246,7 @@ var init = function (){
 	//criar um piso.
 	ground = new THREE.Mesh(
 		new THREE.PlaneBufferGeometry(1000,1000),
-		new THREE.MeshBasicMaterial({color: 0x006400})
+		new THREE.MeshBasicMaterial({color: 0x964b00})
 	);
 	ground.rotation.x = - Math.PI/2;
 	ground.position.y-=7.5;
@@ -340,7 +288,7 @@ var onMouseMove = function(e){
 		//  );
 		//  elementos["puppet"]["tronco"].quaternion.multiplyQuaternions(angulosQuaternion, elementos["puppet"]["tronco"].quaternion);
 
-		//camera.rotation.x += paraRadianos(diferencaMovimento.y)*0.1;
+		camera.rotation.x += paraRadianos(diferencaMovimento.y)*0.1;
 		camera.rotation.y += paraRadianos(diferencaMovimento.x)*0.1;
 
 
