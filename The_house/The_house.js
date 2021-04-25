@@ -50,8 +50,8 @@ var objLoading = function(){
 	);
 
     // Carregando Lareira
-	loader = new THREE.OBJLoader();
-	loader.load(
+	loader1 = new THREE.OBJLoader();
+	loader1.load(
 		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Lareira.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
@@ -64,18 +64,130 @@ var objLoading = function(){
 				}
 			);
 
-			obj.scale.y = 5;
-			obj.scale.z = 5;
-			obj.scale.x = 5;
+			obj.scale.y = 8;
+			obj.scale.z = 8;
+			obj.scale.x = 8;
 
-			obj.position.x = 0;
+			obj.position.x = -24;
 			obj.position.y = -5;
-			obj.position.z = 0;
+			obj.position.z = -50;
 
 			//obj.rotation.x-=1.35;
 
 			scene.add(obj);
-			console.log("Carregou!");
+			console.log("Carregou Lareira");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Poltrona
+	let loaderFBX2 = new THREE.FBXLoader();
+	loaderFBX2.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Poltrona.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['poltrona1'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material.color.setHex("0x626563");
+					}
+				}
+			);
+
+			obj.scale.y = 0.2;
+			obj.scale.z = 0.2;
+			obj.scale.x = 0.2;
+
+			obj.position.y = -5;
+			obj.position.x = -40;
+			obj.position.z += 20;
+
+			obj.rotation.y += 0.9;
+
+			scene.add(obj);
+			console.log("Carregou Poltrona 1");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Bide
+	let loaderFBX3 = new THREE.FBXLoader();
+	loaderFBX3.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Bide.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['bide'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material.color.setHex("0x1f4861");
+					}
+				}
+			);
+
+			obj.scale.y = 0.2;
+			obj.scale.z = 0.2;
+			obj.scale.x = 0.2;
+
+			obj.position.y = -5;
+			obj.position.x = -50;
+			obj.position.z += 50;
+
+			scene.add(obj);
+			console.log("Carregou Bide");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Poltrona
+	let loaderFBX4 = new THREE.FBXLoader();
+	loaderFBX4.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Poltrona.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['poltrona2'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material.color.setHex("0x626563");
+					}
+				}
+			);
+
+			obj.scale.y = 0.2;
+			obj.scale.z = 0.2;
+			obj.scale.x = 0.2;
+
+			obj.position.y = -5;
+			obj.position.x = -40;
+			obj.position.z += 80;
+
+			obj.rotation.y += 2.2;
+
+			scene.add(obj);
+			console.log("Carregou Poltrona 2");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -88,31 +200,183 @@ var objLoading = function(){
 
 
 
-	// Carregando Bide
-	let loaderFBX = new THREE.FBXLoader();
-	loaderFBX.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Bide.fbx',//arquivo que vamos buscar
+	// Carregando Sofa
+	let loaderFBX5 = new THREE.FBXLoader();
+	loaderFBX5.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Sofa.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['bide'] = obj;
+			elementos['sofa'] = obj;
 
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0x303030");
+						child.material = new THREE.MeshPhongMaterial({color: 0x1f4861});
 					}
 				}
 			);
 
-			obj.scale.y = 0.2;
-			obj.scale.z = 0.2;
-			obj.scale.x = 0.2;
+			obj.scale.y = 0.18;
+			obj.scale.z = 0.18;
+			obj.scale.x = 0.18;
 
 			obj.position.y = -5;
-			obj.position.x = -80;
+			obj.position.x = 50;
+			obj.position.z += 50;
+
+			obj.rotation.x += 1.55;
+
+			scene.add(obj);
+			console.log("Carregou Sofa");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	
+
+	// Carregando Lustre
+	let loaderFBX6 = new THREE.FBXLoader();
+	loaderFBX6.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Lustre.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['lustre'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshPhongMaterial({color: 0x08004d});
+					}
+				}
+			);
+
+			obj.scale.y = 0.3;
+			obj.scale.z = 0.3;
+			obj.scale.x = 0.3;
+
+			obj.position.y = 30;
+			obj.position.x = 0;
 			obj.position.z += 50;
 
 			scene.add(obj);
-			console.log("Carregou Bide");
+			console.log("Carregou Lustre");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Ratos
+	let loaderFBX7 = new THREE.FBXLoader();
+	loaderFBX7.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Rato.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['ratos'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshPhongMaterial({color: 0x682700});
+					}
+				}
+			);
+
+			obj.scale.y = 1;
+			obj.scale.z = 1;
+			obj.scale.x = 1;
+
+			obj.position.y = 36;
+			obj.position.x = -5;
+			obj.position.z += 49;
+			
+			obj.rotation.y += 3.1;
+
+			scene.add(obj);
+			console.log("Carregou Ratos");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Gato 1
+	let loaderFBX8 = new THREE.FBXLoader();
+	loaderFBX8.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato1.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato1'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshPhongMaterial({color: 0x3d3d3d});
+					}
+				}
+			);
+
+			obj.scale.y = 0.01;
+			obj.scale.z = 0.01;
+			obj.scale.x = 0.01;
+
+			obj.position.y = -0.5;
+			obj.position.x = -50;
+			obj.position.z += 50.5;
+			
+			obj.rotation.y -= 1.5;
+
+			scene.add(obj);
+			console.log("Carregou Gato 1");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Gato 2
+	loader1 = new THREE.OBJLoader();
+	loader1.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato2'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material.color.setHex("0xa35000");
+					}
+				}
+			);
+
+			obj.scale.y = 0.13;
+			obj.scale.z = 0.13;
+			obj.scale.x = 0.13;
+
+			obj.position.x = 42;
+			obj.position.y = 8;
+			obj.position.z = 45;
+
+			obj.rotation.y -= 1.35;
+
+			scene.add(obj);
+			console.log("Carregou Gato 2");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -246,7 +510,7 @@ var init = function (){
 	//criar um piso.
 	ground = new THREE.Mesh(
 		new THREE.PlaneBufferGeometry(1000,1000),
-		new THREE.MeshBasicMaterial({color: 0x964b00})
+		new THREE.MeshBasicMaterial({color: 0x999999})
 	);
 	ground.rotation.x = - Math.PI/2;
 	ground.position.y-=7.5;
