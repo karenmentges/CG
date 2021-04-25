@@ -6,8 +6,6 @@ var parametrosGUI = {};
 
 var elementos = [];
 
-var velocidade = 0.07;
-
 var ground;
 var geometriaA;
 
@@ -365,18 +363,95 @@ var objLoading = function(){
 				}
 			);
 
-			obj.scale.y = 0.13;
-			obj.scale.z = 0.13;
-			obj.scale.x = 0.13;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			obj.scale.x = 0.15;
 
-			obj.position.x = 42;
+			obj.position.x = 45;
 			obj.position.y = 8;
-			obj.position.z = 45;
+			obj.position.z = 40;
 
 			obj.rotation.y -= 1.35;
 
 			scene.add(obj);
 			console.log("Carregou Gato 2");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Gato 3
+	loader1 = new THREE.OBJLoader();
+	loader1.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato3.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato3'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material.color.setHex("0xadadad");
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = 47;
+			obj.position.y = 5.5;
+			obj.position.z = 60;
+
+			obj.rotation.y -= 2.5;
+
+			scene.add(obj);
+			console.log("Carregou Gato 3");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	// Carregando Gato 4
+	loader1 = new THREE.OBJLoader();
+	loader1.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato4.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato4'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshPhongMaterial({color: 0x212121});
+					}
+				}
+			);
+
+			obj.scale.x = 0.2;
+			obj.scale.y = 0.2;
+			obj.scale.z = 0.2;
+			
+			obj.position.x = 0;
+			obj.position.y = -5;
+			obj.position.z = 80;
+
+			obj.rotation.x -= 1.5;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 4");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -516,13 +591,7 @@ var init = function (){
 	ground.position.y-=7.5;
 	scene.add(ground);
 
-
-
-	document.addEventListener('keydown', apertouButao);
-	document.addEventListener('keyup', soltouBotao);
-
 	//metodos do mouser
-	document.addEventListener('mousewheel', onMouseWheel);
 	document.addEventListener('mousemove', onMouseMove);
 	document.addEventListener('mousedown', onMouseClick);
 	document.addEventListener('mouseup', onMouseUp);
@@ -571,105 +640,10 @@ var onMouseUp = function(e){
 	clicando = false;
 };
 
-var onMouseWheel = function (e){
-	elementos["puppet"]["tronco"].scale.x+= (e.deltaY > 0)?-0.1:0.1;
-	elementos["puppet"]["tronco"].scale.y+= (e.deltaY > 0)?-0.1:0.1;
-	elementos["puppet"]["tronco"].scale.z+= (e.deltaY > 0)?-0.1:0.1;
-
-}
-
-
-
-var key_r = false;
-var key_space = false;
-var key_q = false;
-
-var soltouBotao = function(e){
-
-	if (e.keyCode == 82){ //r
-		key_r = false;
-	}
-	if (e.keyCode == 32){ //espaço
-		key_space = false;
-	}
-	if (e.keyCode == 81){ //espaço
-		key_q = false;
-	}
-}
-
-
-var apertouButao =  function(e){
-	console.log(e.keyCode);
-
-	if (e.keyCode == 82){ //r
-		key_r = true;
-	}
-	if (e.keyCode == 32){ // space
-		key_space = true;
-		pulando = true;
-	}
-
-	if (e.keyCode == 81){ // q
-		key_q = true;		
-	}
-
-	if (e.keyCode == 38){ //douwn
-		camera.position.z-=0.5;
-		//elementos["puppet"]["tronco"].position.z += 1;
-	}
-	if (e.keyCode == 40){ // UP
-		//elementos["puppet"]["tronco"].position.z -= 1;
-		camera.position.z+=0.5;
-	}
-}
-
-var count =0; 
-var velocidadeOmbroDireitoC = -0.01;
-var velocidadeOmbroDireitoL = -0.01;
-var pulando = false;
-var velocidadePulo = 0.5;
-var altura = -1;
 var animation = function (){
 	requestAnimationFrame(animation); //adiciona o método na fila de renderização
 
-	if (key_space){ //movimento frente
-		if (elementos["puppet"]["pivotOmbroD"].rotation.x < -2.83 || elementos["puppet"]["pivotOmbroD"].rotation.x > 1.3)
-			velocidadeOmbroDireitoC*=-1;
-
-		elementos["puppet"]["pivotOmbroD"].rotation.x += velocidadeOmbroDireitoC;
-	}
-	if (key_r){
-		if (elementos["puppet"]["pivotOmbroD"].rotation.z < 0 || elementos["puppet"]["pivotOmbroD"].rotation.z > 1.4)
-			velocidadeOmbroDireitoL*=-1;
-
-		elementos["puppet"]["pivotOmbroD"].rotation.z += velocidadeOmbroDireitoL;
-	}
-	if (key_q){
-		elementos["puppet"]["tronco"].rotation.y += 0.01;
-	}
-
-	if (pulando && ++count >= 30 ){
-		
-		if (altura == -1) altura = elementos['puppet']['tronco'].position.y;
-		if (elementos['puppet']['tronco'].position.y >= altura && elementos['puppet']['tronco'].position.y <= altura+3){
-			//console.log("-> "+ elementos['puppet']['tronco'].position.y);
-			elementos['puppet']['tronco'].position.y+=velocidadePulo;
-			if (elementos['puppet']['tronco'].position.y <= altura){
-				elementos['puppet']['tronco'].position.y = altura;
-				pulando = false;
-			}
-		} else{
-			elementos['puppet']['tronco'].position.y-=velocidadePulo; 	
-			velocidadePulo *=-1;
-		}
-		count =0;
-	}
-
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
-}
-
-function paraRadianos(angulo){
-	return angulo * (Math.PI/180);
 }
 
 window.onload = this.init
