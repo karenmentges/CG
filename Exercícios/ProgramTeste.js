@@ -35,7 +35,7 @@ var criaCubo = function(){
 };
 
 
-r init = function(){
+var init = function(){
   console.log("Teste");
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(40, // view angle
