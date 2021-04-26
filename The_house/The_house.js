@@ -495,15 +495,12 @@ var createGui = function (){
 		}
 	);
 
-	let opcoes = ['Cachorro', 'Ratos', 'Gato 1', 'Gato 2', 'Gato 3', 'Gato 4'];
+	let opcoes = ['Cachorro', 'Gato 1', 'Gato 2', 'Gato 3', 'Gato 4', 'Ratos'];
 	let comboChange = gui.add(parametrosGUI, 'geometrias').options(opcoes).name("Objects");
 	comboChange.onChange(function(parametro){
 			if (parametro == 'Cachorro'){
 				camera.lookAt(elementos["cachorro"].position);
 				parametrosGUI.modelGui = "cachorro";
-			} else if (parametro == 'Ratos'){
-				camera.lookAt(elementos["ratos"].position);
-				parametrosGUI.modelGui = "ratos";
 			} else if (parametro == 'Gato 1'){
 				camera.lookAt(elementos["gato1"].position);
 				parametrosGUI.modelGui = "gato1";
@@ -516,22 +513,25 @@ var createGui = function (){
 			} else if (parametro == 'Gato 4'){
 				camera.lookAt(elementos["gato4"].position);
 				parametrosGUI.modelGui = "gato4";
+			} else if (parametro == 'Ratos'){
+				camera.lookAt(elementos["ratos"].position);
+				parametrosGUI.modelGui = "ratos";
 			} 
 		}
 	);
 	let folderPosition = gui.addFolder("Position");
 
-	let positionX = folderPosition.add(parametrosGUI, 'positionX').min(-10).max(10).step(0.1).name("Position X");
+	let positionX = folderPosition.add(parametrosGUI, 'positionX').min(-100).max(100).step(0.1).name("Position X");
 	positionX.onChange(function (parametro){
 		elementos[parametrosGUI.modelGui].position.x = parametro;
 		}
 	);
-	let positionY = folderPosition.add(parametrosGUI, 'positionY').min(-10).max(10).step(0.1).name("Position Y");
+	let positionY = folderPosition.add(parametrosGUI, 'positionY').min(-10).max(50).step(0.1).name("Position Y");
 	positionY.onChange(function (parametro){
 			elementos[parametrosGUI.modelGui].position.y = parametro;
 		}
 	);
-	let positionZ = folderPosition.add(parametrosGUI, 'positionZ').min(-10).max(10).step(0.1).name("Position Z");
+	let positionZ = folderPosition.add(parametrosGUI, 'positionZ').min(-100).max(100).step(0.1).name("Position Z");
 	positionZ.onChange(function (parametro){
 		elementos[parametrosGUI.modelGui].position.z = parametro;
 		}
@@ -612,9 +612,9 @@ var init = function (){
 	scene.add(ground);
 
 	//metodos do mouser
-	document.addEventListener('mousemove', onMouseMove);
-	document.addEventListener('mousedown', onMouseClick);
-	document.addEventListener('mouseup', onMouseUp);
+	//document.addEventListener('mousemove', onMouseMove);
+	//document.addEventListener('mousedown', onMouseClick);
+	//document.addEventListener('mouseup', onMouseUp);
 };
 
 var clicando = false;
