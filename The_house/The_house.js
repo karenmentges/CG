@@ -7,7 +7,6 @@ var parametrosGUI = {};
 var elementos = [];
 
 var ground;
-var geometriaA;
 
 
 var objLoading = function(){
@@ -482,13 +481,13 @@ var createGui = function (){
 		positionZ: 0,
 
 		skyColor : "#000000",
-		groundColor: "#006400",
+		groundColor: "#ffffff",
 
 		geometrias: "",
 		modelGui: ""
 	};
 
-	let fazScala = gui.add(parametrosGUI, 'scalarPuppet').min(0.1).max(2).step(0.1).name("Scale");
+	let fazScala = gui.add(parametrosGUI, 'scalarPuppet').min(0.001).max(3).step(0.000001).name("Scale");
 	fazScala.onChange(function (parametro){
 			elementos[parametrosGUI.modelGui].scale.x = parametro;
 			elementos[parametrosGUI.modelGui].scale.y = parametro;
@@ -496,21 +495,33 @@ var createGui = function (){
 		}
 	);
 
-	let opcoes = ['Ovelha','Triceratopis'];
-	let comboChange = gui.add(parametrosGUI, 'geometrias').options(opcoes).name("Objetos");
+	let opcoes = ['Cachorro', 'Ratos', 'Gato 1', 'Gato 2', 'Gato 3', 'Gato 4'];
+	let comboChange = gui.add(parametrosGUI, 'geometrias').options(opcoes).name("Objects");
 	comboChange.onChange(function(parametro){
-			if (parametro == 'Ovelha'){
-				camera.lookAt(elementos["ove"].position);
-				parametrosGUI.modelGui = "ove";
-			}else if (parametro == 'Triceratopis'){
-				camera.lookAt(elementos["tri"].position);
-				parametrosGUI.modelGui = "tri";
+			if (parametro == 'Cachorro'){
+				camera.lookAt(elementos["cachorro"].position);
+				parametrosGUI.modelGui = "cachorro";
+			} else if (parametro == 'Ratos'){
+				camera.lookAt(elementos["ratos"].position);
+				parametrosGUI.modelGui = "ratos";
+			} else if (parametro == 'Gato 1'){
+				camera.lookAt(elementos["gato1"].position);
+				parametrosGUI.modelGui = "gato1";
+			} else if (parametro == 'Gato 2'){
+				camera.lookAt(elementos["gato2"].position);
+				parametrosGUI.modelGui = "gato2";
+			} else if (parametro == 'Gato 3'){
+				camera.lookAt(elementos["gato3"].position);
+				parametrosGUI.modelGui = "gato3";
+			} else if (parametro == 'Gato 4'){
+				camera.lookAt(elementos["gato4"].position);
+				parametrosGUI.modelGui = "gato4";
 			} 
 		}
 	);
 	let folderPosition = gui.addFolder("Position");
 
-	let positionX = folderPosition.add(parametrosGUI, 'positionX').min(-6).max(6).step(0.1).name("Position X");
+	let positionX = folderPosition.add(parametrosGUI, 'positionX').min(-10).max(10).step(0.1).name("Position X");
 	positionX.onChange(function (parametro){
 		elementos[parametrosGUI.modelGui].position.x = parametro;
 		}
@@ -520,14 +531,14 @@ var createGui = function (){
 			elementos[parametrosGUI.modelGui].position.y = parametro;
 		}
 	);
-	let positionZ = folderPosition.add(parametrosGUI, 'positionZ').min(-6).max(6).step(0.1).name("Position Z");
+	let positionZ = folderPosition.add(parametrosGUI, 'positionZ').min(-10).max(10).step(0.1).name("Position Z");
 	positionZ.onChange(function (parametro){
 		elementos[parametrosGUI.modelGui].position.z = parametro;
 		}
 	);
 
 	let colorFolder = gui.addFolder('Coloros');
-	let sColor = colorFolder.addColor(parametrosGUI, 'skyColor').name("SkyColor");
+	let sColor = colorFolder.addColor(parametrosGUI, 'skyColor').name("Sky");
 	sColor.onChange(function (parametro){
 			scene.background= new THREE.Color(parametro);
 		}
@@ -541,6 +552,18 @@ var createGui = function (){
 	gui.open();
 
 }
+
+
+var createMaterial = function() {
+    var texture = new THREE.TextureLoader().load("texture/ny.png");
+    var material = new THREE.MeshBasicMaterial();
+
+    material.map = texture;
+
+    return material;
+
+};
+
 
 var init = function (){
 	
@@ -582,10 +605,7 @@ var init = function (){
 
 
 	//criar um piso.
-	ground = new THREE.Mesh(
-		new THREE.PlaneBufferGeometry(1000,1000),
-		new THREE.MeshBasicMaterial({color: 0x999999})
-	);
+	ground = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000,1000), createMaterial());
 
 	ground.rotation.x = - Math.PI/2;
 	ground.position.y-=7.5;
