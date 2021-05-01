@@ -1,12 +1,11 @@
 var scene; //mundo virtual
 var camera; //area de visualização
 var renderer; //responsavel por renderizar tudo
+var controls; //controle do mouse
+var ground;
 
 var parametrosGUI = {};
-
 var elementos = [];
-
-var ground;
 
 
 var objLoading = function(){
@@ -56,9 +55,20 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['lareira'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0x808080");
+						let material = new THREE.MeshStandardMaterial();
+						let materialBase = texLoader.load("Lareira_Color.png");
+						material.encoding = THREE.sRGBEncoding;
+						material.map = materialBase
+
+						//material.normalMap = texLoader.load("Lareira_Normalmap.png");
+						//material.roughnessMap = texLoader.load("Lareira_Gloss.png");
+						//material.roughnessMap.wrapS = THREE.RepeatWrapping;
+
+						child.material = material;
 					}
 				}
 			);
@@ -92,9 +102,18 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['poltrona1'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0x626563");
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Poltrona_Diffuse.png");
+						material.normalMap = texLoader.load("Poltrona_Normal.png");
+
+						material.roughnessMap = texLoader.load("Poltrona_Roughness.png");
+						material.roughnessMap.wrapS = THREE.RepeatWrapping;
+
+						child.material = material;
 					}
 				}
 			);
@@ -130,9 +149,21 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['bide'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0x1f4861");
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Bide_Diffuse.png");
+						material.normalMap = texLoader.load("Bide_Normal.png");
+
+						material.roughnessMap = texLoader.load("Bide_OcclusionRoughnessMetallic.png");
+						material.roughnessMap.wrapS = THREE.RepeatWrapping;
+
+						material.metalnessMap = texLoader.load("Bide_OcclusionRoughnessMetallic.png");
+						material.metalnessMap.wrapS = THREE.RepeatWrapping;
+
+						child.material = material;
 					}
 				}
 			);
@@ -166,12 +197,21 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['poltrona2'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0x626563");
-					}
+				if (child instanceof THREE.Mesh){
+					let material = new THREE.MeshStandardMaterial();
+					material.map = texLoader.load("Poltrona_Diffuse.png");
+					material.normalMap = texLoader.load("Poltrona_Normal.png");
+
+					material.roughnessMap = texLoader.load("Poltrona_Roughness.png");
+					material.roughnessMap.wrapS = THREE.RepeatWrapping;
+
+					child.material = material;
 				}
-			);
+			}
+		);
 
 			obj.scale.x = 0.2;
 			obj.scale.y = 0.2;
@@ -205,9 +245,21 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['sofa'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshPhongMaterial({color: 0x1f4861});
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Sofa_Diffuse.png");
+						material.normalMap = texLoader.load("Sofa_Normal.png");
+
+						material.roughnessMap = texLoader.load("Sofa_OcclusionRoughnessMetallic.png");
+						material.roughnessMap.wrapS = THREE.RepeatWrapping;
+
+						material.metalnessMap = texLoader.load("Sofa_OcclusionRoughnessMetallic.png");
+						material.metalnessMap.wrapS = THREE.RepeatWrapping;
+
+						child.material = material;
 					}
 				}
 			);
@@ -243,9 +295,21 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['lustre'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshPhongMaterial({color: 0x08004d});
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Lustre_Diffuse.png");
+						material.normalMap = texLoader.load("Lustre_Normal.png");
+
+						material.roughnessMap = texLoader.load("Lustre_OcclusionRoughnessMetallic.png");
+						material.roughnessMap.wrapS = THREE.RepeatWrapping;
+
+						material.metalnessMap = texLoader.load("Lustre_OcclusionRoughnessMetallic.png");
+						material.metalnessMap.wrapS = THREE.RepeatWrapping;
+
+						child.material = material;
 					}
 				}
 			);
@@ -613,10 +677,12 @@ var init = function (){
 	ground.position.y-=7.5;
 	scene.add(ground);
 
+	//controls = new THREE.OrbitControls(camera, renderer.domElement);
+
 	//metodos do mouser
-	//document.addEventListener('mousemove', onMouseMove);
-	//document.addEventListener('mousedown', onMouseClick);
-	//document.addEventListener('mouseup', onMouseUp);
+	document.addEventListener('mousemove', onMouseMove);
+	document.addEventListener('mousedown', onMouseClick);
+	document.addEventListener('mouseup', onMouseUp);
 };
 
 var clicando = false;
