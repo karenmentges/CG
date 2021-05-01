@@ -21,7 +21,9 @@ var objLoading = function(){
 
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0xD69A3A");
+						child.material = new THREE.MeshStandardMaterial({
+							map: new THREE.TextureLoader().load("texture/Cachorro_Texture.png")}
+						);
 					}
 				}
 			);
@@ -277,12 +279,12 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['ratos'] = obj;
 
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshPhongMaterial({color: 0x682700});
-					}
-				}
-			);
+			//obj.traverse( function (child){
+					//if (child instanceof THREE.Mesh){
+						//child.material = new THREE.MeshPhongMaterial({color: 0x682700});
+			//		}
+			//	}
+			//);
 
 			obj.scale.x = 1;
 			obj.scale.y = 1;
@@ -316,9 +318,9 @@ var objLoading = function(){
 			elementos['gato1'] = obj;
 
 			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshPhongMaterial({color: 0x3d3d3d});
-					}
+					child.material = new THREE.MeshStandardMaterial({
+						map: new THREE.TextureLoader().load("texture/Gato1_Texture.png")}
+					);
 				}
 			);
 
