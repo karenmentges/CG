@@ -60,13 +60,11 @@ var objLoading = function(){
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
 						let material = new THREE.MeshStandardMaterial();
-						let materialBase = texLoader.load("Lareira_Color.png");
-						material.encoding = THREE.sRGBEncoding;
-						material.map = materialBase
+						material.map = texLoader.load("Lareira_Color.png");
+						material.normalMap = texLoader.load("Lareira_Normalmap.png");
 
-						//material.normalMap = texLoader.load("Lareira_Normalmap.png");
-						//material.roughnessMap = texLoader.load("Lareira_Gloss.png");
-						//material.roughnessMap.wrapS = THREE.RepeatWrapping;
+						material.roughnessMap = texLoader.load("Lareira_Gloss.png");
+						material.roughnessMap.wrapS = THREE.RepeatWrapping;
 
 						child.material = material;
 					}
@@ -419,9 +417,14 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato2'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0xa35000");
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
 					}
 				}
 			);
@@ -457,11 +460,17 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato3'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material.color.setHex("0xadadad");
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato3_Diffuse.jpg");
+						material.normalMap = texLoader.load("Gato3_Normal(bump).jpg")
+
+						child.material = material;
 					}
-				}
+				} 
 			);
 
 			obj.scale.x = 0.15;
@@ -495,9 +504,14 @@ var objLoading = function(){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato4'] = obj;
 
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshPhongMaterial({color: 0x212121});
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato4_Texture.jpg");
+
+						child.material = material;
 					}
 				}
 			);
