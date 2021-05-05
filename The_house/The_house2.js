@@ -453,35 +453,29 @@ var objLoading = function(){
 
 
 	// Carregando Gato 3
-	loader3 = new THREE.OBJLoader();
-	loader3.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato3.obj',//arquivo que vamos buscar
+	let loaderFBX9 = new THREE.FBXLoader();
+	loaderFBX9.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato1.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato3'] = obj;
 
-			let texLoader = new THREE.TextureLoader().setPath("texture/");
-
 			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						let material = new THREE.MeshStandardMaterial();
-						material.map = texLoader.load("Gato3_Diffuse.jpg");
-						material.normalMap = texLoader.load("Gato3_Normal(bump).jpg")
-
-						child.material = material;
-					}
-				} 
+					child.material = new THREE.MeshStandardMaterial({
+						map: new THREE.TextureLoader().load("texture/Gato1_Texture.png")}
+					);
+				}
 			);
 
-			obj.scale.x = 0.15;
-			obj.scale.y = 0.15;
-			obj.scale.z = 0.15;
+			obj.scale.x = 0.01;
+			obj.scale.y = 0.01;
+			obj.scale.z = 0.01;
 			
-			obj.position.x = 47;
+			obj.position.x = 50;
 			obj.position.y = 5.5;
-			obj.position.z = 60;
-
-			obj.rotation.y -= 2.5;
+			obj.position.z += 60;
+			
+			obj.rotation.y += 1.2;
 
 			scene.add(obj);
 			console.log("Carregou Gato 3");
@@ -499,7 +493,7 @@ var objLoading = function(){
 	// Carregando Gato 4
 	loader4 = new THREE.OBJLoader();
 	loader4.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato4.obj',//arquivo que vamos buscar
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato4'] = obj;
@@ -509,22 +503,22 @@ var objLoading = function(){
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
 						let material = new THREE.MeshStandardMaterial();
-						material.map = texLoader.load("Gato4_Texture.jpg");
+						material.map = texLoader.load("Gato2_Texture.jpg");
 
 						child.material = material;
 					}
 				}
 			);
 
-			obj.scale.x = 0.2;
-			obj.scale.y = 0.2;
-			obj.scale.z = 0.2;
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
 			
 			obj.position.x = 0;
-			obj.position.y = -5;
+			obj.position.y = -3;
 			obj.position.z = 80;
 
-			obj.rotation.x -= 1.5;
+			obj.rotation.x -= 3;
 			obj.rotation.z += 3.15;
 
 			scene.add(obj);
