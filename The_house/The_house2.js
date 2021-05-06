@@ -26,7 +26,7 @@ var objLoading = function(){
 					}
 				}
 			);
-
+			
 			obj.scale.x = 0.025;
 			obj.scale.y = 0.025;
 			obj.scale.z = 0.025;
@@ -50,7 +50,7 @@ var objLoading = function(){
     // Carregando Lareira
 	loader1 = new THREE.OBJLoader();
 	loader1.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Lareira.obj',//arquivo que vamos buscar
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Lareira1.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['lareira'] = obj;
@@ -60,24 +60,20 @@ var objLoading = function(){
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
 						let material = new THREE.MeshStandardMaterial();
-						material.map = texLoader.load("Lareira_Color.png");
-						material.normalMap = texLoader.load("Lareira_Normalmap.png");
-
-						material.roughnessMap = texLoader.load("Lareira_Gloss.png");
-						material.roughnessMap.wrapS = THREE.RepeatWrapping;
-
+						material.map = texLoader.load("Lareira_Texture.jpg");
+	
 						child.material = material;
 					}
 				}
 			);
 
-			obj.scale.x = 8;
-			obj.scale.y = 8;
-			obj.scale.z = 8;
+			obj.scale.x = 0.7;
+			obj.scale.y = 0.7;
+			obj.scale.z = 0.7;
 			
-			obj.position.x = -24;
-			obj.position.y = -5;
-			obj.position.z = -50;
+			obj.position.x = 0;
+			obj.position.y = 25;
+			obj.position.z = -80;
 
 			scene.add(obj);
 			console.log("Carregou Lareira");
@@ -533,6 +529,437 @@ var objLoading = function(){
 		}//o que acontece se der merda.
 	);
 
+	// Carregando Gato 5
+	loader5 = new THREE.OBJLoader();
+	loader5.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato5'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = 5;
+			obj.position.y = -3;
+			obj.position.z = 85;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 5");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 6
+	loader6 = new THREE.OBJLoader();
+	loader6.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato6'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = -5;
+			obj.position.y = -3;
+			obj.position.z = 85;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 6");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 7
+	loader7 = new THREE.OBJLoader();
+	loader7.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato7'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = 10;
+			obj.position.y = -3;
+			obj.position.z = 90;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 7");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 8
+	loader8 = new THREE.OBJLoader();
+	loader8.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato8'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = 2.5;
+			obj.position.y = -3;
+			obj.position.z = 90;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 8");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 9
+	loader9 = new THREE.OBJLoader();
+	loader9.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato9'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = -2.5;
+			obj.position.y = -3;
+			obj.position.z = 90;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 9");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 10
+	loader10 = new THREE.OBJLoader();
+	loader10.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato10'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = -10;
+			obj.position.y = -3;
+			obj.position.z = 90;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 10");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 11
+	loader11 = new THREE.OBJLoader();
+	loader11.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato11'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = 15;
+			obj.position.y = -3;
+			obj.position.z = 95;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 11");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 12
+	loader12 = new THREE.OBJLoader();
+	loader12.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato12'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = 8;
+			obj.position.y = -3;
+			obj.position.z = 95;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 12");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 13
+	loader13 = new THREE.OBJLoader();
+	loader13.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato13'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = -8;
+			obj.position.y = -3;
+			obj.position.z = 95;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 13");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	// Carregando Gato 14
+	loader14 = new THREE.OBJLoader();
+	loader14.load(
+		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['gato14'] = obj;
+
+			let texLoader = new THREE.TextureLoader().setPath("texture/");
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						let material = new THREE.MeshStandardMaterial();
+						material.map = texLoader.load("Gato2_Texture.jpg");
+
+						child.material = material;
+					}
+				}
+			);
+
+			obj.scale.x = 0.15;
+			obj.scale.y = 0.15;
+			obj.scale.z = 0.15;
+			
+			obj.position.x = -15;
+			obj.position.y = -3;
+			obj.position.z = 95;
+
+			obj.rotation.x -= 3;
+			obj.rotation.z += 3.15;
+
+			scene.add(obj);
+			console.log("Carregou Gato 14");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
 
 };
 
@@ -627,18 +1054,6 @@ var createGui = function (){
 
 }
 
-
-var createMaterial = function() {
-    var texture = new THREE.TextureLoader().load("texture/ny.png");
-    var material = new THREE.MeshBasicMaterial();
-
-    material.map = texture;
-
-    return material;
-
-};
-
-
 var init = function (){
 	
 	scene = new THREE.Scene();
@@ -677,13 +1092,25 @@ var init = function (){
 
 	animation();
 
-
 	//criar um piso.
-	ground = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000,1000), createMaterial());
+	let textureLoad = new THREE.TextureLoader();
+	let groundTexture = textureLoad.load("texture/ny.png"); //busca a imagem
+	groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping; //quero que ela se repita
+	groundTexture.encoding = THREE.sRGBEncoding; //padrão cores, sempre que existir será informado
+	groundTexture.repeat.set(25,25); //número de vezes que ela vai se repetir dentro do nosso chão
+	
+	let materialGround = new THREE.MeshStandardMaterial({map: groundTexture});
+	materialGround.normalMap = textureLoad.load("texture/ny.png"); //busca a normal, que da noção básica de profundidade
 
+
+	ground = new THREE.Mesh(
+		new THREE.PlaneBufferGeometry(500,500),
+		materialGround
+	);
 	ground.rotation.x = - Math.PI/2;
 	ground.position.y-=7.5;
 	scene.add(ground);
+
 
 	//controls = new THREE.OrbitControls(camera, renderer.domElement);
 
