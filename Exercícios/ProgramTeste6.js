@@ -17,12 +17,12 @@ var objLoading = function(){
 	loader = new THREE.OBJLoader();
 
 	loader.load(
-		'assets/ninja/ninjaHead_Low.obj',//arquivo que vamos buscar
+		'../assets/ninja/ninjaHead_Low.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['ninja'] = obj;
 
-			let texLoader = new THREE.TextureLoader().setPath("assets/ninja/");
+			let texLoader = new THREE.TextureLoader().setPath("../assets/ninja/");
 
 
 			obj.traverse( function (child){
@@ -64,12 +64,12 @@ var objLoading = function(){
 
 	//CERBERUS
 	loader.load(
-		'assets/cerberus/Cerberus.obj',//arquivo que vamos buscar
+		'../assets/cerberus/Cerberus.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['cerberus'] = obj;
 
-			let texLoader = new THREE.TextureLoader().setPath("assets/cerberus/");
+			let texLoader = new THREE.TextureLoader().setPath("../assets/cerberus/");
 
 
 			obj.traverse( function (child){
@@ -124,7 +124,7 @@ var objLoading = function(){
 	//carregando Ovelha
 	let loaderFBX = new THREE.FBXLoader();
 	loaderFBX.load(
-		'assets/Sheep.fbx',//arquivo que vamos buscar
+		'../assets/Sheep.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['ove'] = obj;
@@ -132,7 +132,7 @@ var objLoading = function(){
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
 						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UVSheep.png")}
+							map: new THREE.TextureLoader().load("../assets/texturas/UVSheep.png")}
 						);
 					}
 				}
@@ -292,13 +292,13 @@ var init = function (){
 
 	//criar um piso.
 	let textureLoad = new THREE.TextureLoader();
-	let groundTexture = textureLoad.load("assets/texturas/terrain/grasslight-big.jpg"); //busca a imagem
+	let groundTexture = textureLoad.load("../assets/texturas/terrain/grasslight-big.jpg"); //busca a imagem
 	groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping; //quero que ela se repita
 	groundTexture.encoding = THREE.sRGBEncoding; //padrão cores, sempre que existir será informado
 	groundTexture.repeat.set(25,25); //número de vezes que ela vai se repetir dentro do nosso chão
 	
 	let materialGround = new THREE.MeshStandardMaterial({map: groundTexture});
-	materialGround.normalMap = textureLoad.load("assets/texturas/terrain/grasslight-big-nm.jpg"); //busca a normal, que da noção básica de profundidade
+	materialGround.normalMap = textureLoad.load("../assets/texturas/terrain/grasslight-big-nm.jpg"); //busca a normal, que da noção básica de profundidade
 
 
 	ground = new THREE.Mesh(

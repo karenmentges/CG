@@ -16,7 +16,7 @@ var objLoading = function(){
 	loader = new THREE.OBJLoader();
 
 	loader.load(
-		'/home/karenmentges/Área de Trabalho/CG/assets/triceratops.obj',//arquivo que vamos buscar
+		'../assets/triceratops.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['tri'] = obj;
@@ -52,7 +52,7 @@ var objLoading = function(){
 	//carregando Ovelha
 	let loaderFBX = new THREE.FBXLoader();
 	loaderFBX.load(
-		'/home/karenmentges/Área de Trabalho/CG/assets/Sheep.fbx',//arquivo que vamos buscar
+		'../assets/Sheep.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['ove'] = obj;
