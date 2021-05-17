@@ -13,7 +13,7 @@ var geometriaA;
 
 var lights =[];
 
-var wolfVelocity = 0.05;
+var wolfVelocity = 0.5;
 
 //variaveis para animação
 var mixer;
@@ -38,8 +38,10 @@ var objLoading = function(){
 	let loaderFBX = new THREE.FBXLoader();
 
 
+
 ///////////////////////////////////////// FLOOR ///////////////////////////////////////////
 
+
 	loaderFBX.load(
 		'assets/Floor_Modular.fbx',//arquivo que vamos buscar
 		function(obj){
@@ -4669,14 +4671,15 @@ var objLoading = function(){
 			console.log(" Deu merda!: "+ error);
 		}//o que acontece se der merda.
 	);
-
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 
+
 ///////////////////////////////////////// CASTLE //////////////////////////////////////////
 	
+
 	loaderFBX.load(
 		'assets/Arch.fbx',//arquivo que vamos buscar
 		function(obj){
@@ -4691,9 +4694,7 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4724,9 +4725,7 @@ var objLoading = function(){
 			obj.position.x = 75;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4756,9 +4755,7 @@ var objLoading = function(){
 			obj.position.x = 75;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4788,9 +4785,7 @@ var objLoading = function(){
 			obj.position.x = -75;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4820,9 +4815,7 @@ var objLoading = function(){
 			obj.position.x = -75;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4852,9 +4845,7 @@ var objLoading = function(){
 			obj.position.x = 143;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4884,9 +4875,7 @@ var objLoading = function(){
 			obj.position.x = 143;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4916,9 +4905,7 @@ var objLoading = function(){
 			obj.position.x = -143;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4948,9 +4935,7 @@ var objLoading = function(){
 			obj.position.x = -143;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -4980,9 +4965,7 @@ var objLoading = function(){
 			obj.position.x = 193;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5012,9 +4995,7 @@ var objLoading = function(){
 			obj.position.x = 193;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5044,9 +5025,7 @@ var objLoading = function(){
 			obj.position.x = -193;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5076,9 +5055,7 @@ var objLoading = function(){
 			obj.position.x = -193;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5108,9 +5085,7 @@ var objLoading = function(){
 			obj.position.x = 243;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5140,9 +5115,7 @@ var objLoading = function(){
 			obj.position.x = 243;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5172,9 +5145,7 @@ var objLoading = function(){
 			obj.position.x = -243;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5204,9 +5175,7 @@ var objLoading = function(){
 			obj.position.x = -243;
 			obj.position.z = 12;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5222,6 +5191,1587 @@ var objLoading = function(){
 			console.log(" Deu merda!: "+ error);
 		}//o que acontece se der merda.
 	);
+
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -25;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -25;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -75;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -75;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -125;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -125;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -175;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -175;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -225;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -225;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -275;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -275;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -325;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -325;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -375;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -375;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -425;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -425;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -475;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -475;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -263;
+			obj.position.z = -525;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -263;
+			obj.position.z = -525;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -225;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -225;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -175;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -175;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = -125;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = -125;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 225;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 225;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 175;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 175;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 125;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 125;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -525;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -525;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -475;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -475;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -425;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -425;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -375;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -375;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -175;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -175;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -125;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -125;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -75;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -75;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 22;
+			obj.position.x = 263;
+			obj.position.z = -25;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wall'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 72;
+			obj.position.x = 263;
+			obj.position.z = -25;
+
+			obj.rotation.y = 4.75;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Wall");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
 
 
 	loaderFBX.load(
@@ -5238,9 +6788,7 @@ var objLoading = function(){
 			obj.position.x = 108;
 			obj.position.z = 8;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5270,9 +6818,7 @@ var objLoading = function(){
 			obj.position.x = -108;
 			obj.position.z = 8;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5302,9 +6848,7 @@ var objLoading = function(){
 			obj.position.x = 258;
 			obj.position.z = 8;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5334,9 +6878,187 @@ var objLoading = function(){
 			obj.position.x = -258;
 			obj.position.z = 8;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
 
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Column");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Column.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Column'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -3.6;
+			obj.position.x = -258;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Column");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Column.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Column'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -3.6;
+			obj.position.x = -92;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Column");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Column.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Column'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -3.6;
+			obj.position.x = 92;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Column");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Column.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Column'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -3.6;
+			obj.position.x = 258;
+			obj.position.z = -558;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Column");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Column.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Column'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -3.6;
+			obj.position.x = 258;
+			obj.position.z = -358;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Column");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Column.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Column'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -3.6;
+			obj.position.x = 258;
+			obj.position.z = -192;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
@@ -5359,7 +7081,7 @@ var objLoading = function(){
 		'assets/Stairs_Modular.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Column'] = obj;
+			elementos['Stairs'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -5369,15 +7091,13 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = -600;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
 			staticBounding.push(objBox);
-			console.log("Carregou Column");
+			console.log("Carregou Stairs");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -5391,7 +7111,7 @@ var objLoading = function(){
 		'assets/Stairs_Modular.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Column'] = obj;
+			elementos['Stairs'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -5401,15 +7121,13 @@ var objLoading = function(){
 			obj.position.x = 50;
 			obj.position.z = -600;
 
-			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
-
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
 			staticBounding.push(objBox);
-			console.log("Carregou Column");
+			console.log("Carregou Stairs");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -5423,7 +7141,7 @@ var objLoading = function(){
 		'assets/Stairs_Modular.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Column'] = obj;
+			elementos['Stairs'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -5434,14 +7152,14 @@ var objLoading = function(){
 			obj.position.z = -600;
 
 			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 
 			scene.add(obj);
 
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
 			staticBounding.push(objBox);
-			console.log("Carregou Column");
+			console.log("Carregou Stairs");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -5453,10 +7171,12 @@ var objLoading = function(){
 	);
 
 	
-
 	///////////////////////////////////////////////////////////////////////////////////////////
 
+
+
 	/////////////////////////////////////// AMBIENTE //////////////////////////////////////////
+
 
 	//Load do Wolf
 	loaderFBX.load(
@@ -5555,7 +7275,7 @@ var objLoading = function(){
 						}
 					});
 
-			object.scale.x =50;
+			object.scale.x = 50;
 			object.scale.y = 50;
 			object.scale.z = 50;
 
@@ -5563,8 +7283,6 @@ var objLoading = function(){
 			object.position.x = 100;
 			object.position.y = -7;
 
-			//object.rotation.y += 1;
-
 			object.castShadow = true;
 			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
@@ -5573,7 +7291,7 @@ var objLoading = function(){
 
 			scene.add(object);    
 		},//metodo, tudo deu certo
-		function( andamento) {
+		function(andamento) {
 			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
 		},//metodo executa enquanto carrega
 		function (error){
@@ -5594,7 +7312,7 @@ var objLoading = function(){
 						}
 					});
 
-			object.scale.x =50;
+			object.scale.x = 50;
 			object.scale.y = 50;
 			object.scale.z = 50;
 
@@ -5602,8 +7320,6 @@ var objLoading = function(){
 			object.position.x = -100;
 			object.position.y = -7;
 
-			//object.rotation.y += 1;
-
 			object.castShadow = true;
 			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
@@ -5612,7 +7328,7 @@ var objLoading = function(){
 
 			scene.add(object);    
 		},//metodo, tudo deu certo
-		function( andamento) {
+		function(andamento) {
 			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
 		},//metodo executa enquanto carrega
 		function (error){
@@ -5633,7 +7349,7 @@ var objLoading = function(){
 						}
 					});
 
-			object.scale.x =50;
+			object.scale.x = 50;
 			object.scale.y = 50;
 			object.scale.z = 50;
 
@@ -5641,8 +7357,6 @@ var objLoading = function(){
 			object.position.x = 200;
 			object.position.y = -7;
 
-			//object.rotation.y += 1;
-
 			object.castShadow = true;
 			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
@@ -5651,7 +7365,7 @@ var objLoading = function(){
 
 			scene.add(object);    
 		},//metodo, tudo deu certo
-		function( andamento) {
+		function(andamento) {
 			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
 		},//metodo executa enquanto carrega
 		function (error){
@@ -5672,7 +7386,7 @@ var objLoading = function(){
 						}
 					});
 
-			object.scale.x =50;
+			object.scale.x = 50;
 			object.scale.y = 50;
 			object.scale.z = 50;
 
@@ -5680,8 +7394,6 @@ var objLoading = function(){
 			object.position.x = -200;
 			object.position.y = -7;
 
-			//object.rotation.y += 1;
-
 			object.castShadow = true;
 			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
@@ -5690,7 +7402,7 @@ var objLoading = function(){
 
 			scene.add(object);    
 		},//metodo, tudo deu certo
-		function( andamento) {
+		function(andamento) {
 			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
 		},//metodo executa enquanto carrega
 		function (error){
@@ -5711,7 +7423,7 @@ var objLoading = function(){
 						}
 					});
 
-			object.scale.x =50;
+			object.scale.x = 50;
 			object.scale.y = 50;
 			object.scale.z = 50;
 
@@ -5719,8 +7431,6 @@ var objLoading = function(){
 			object.position.x = 150;
 			object.position.y = -7;
 
-			//object.rotation.y += 1;
-
 			object.castShadow = true;
 			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
@@ -5729,7 +7439,7 @@ var objLoading = function(){
 
 			scene.add(object);    
 		},//metodo, tudo deu certo
-		function( andamento) {
+		function(andamento) {
 			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
 		},//metodo executa enquanto carrega
 		function (error){
@@ -5750,15 +7460,13 @@ var objLoading = function(){
 						}
 					});
 
-			object.scale.x =50;
+			object.scale.x = 50;
 			object.scale.y = 50;
 			object.scale.z = 50;
 
 			object.position.z = 150;
 			object.position.x = -150;
 			object.position.y = -7;
-
-			//object.rotation.y += 1;
 
 			object.castShadow = true;
 			scene.add(new THREE.BoxHelper(object, 0xffffff));
@@ -5768,7 +7476,7 @@ var objLoading = function(){
 
 			scene.add(object);    
 		},//metodo, tudo deu certo
-		function( andamento) {
+		function(andamento) {
 			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
 		},//metodo executa enquanto carrega
 		function (error){
@@ -5966,10 +7674,6 @@ var createGui = function (){
 
 	animationFolder = gui.addFolder('Animations');
 
-
-	//gui.add(parametrosGUI, 'b').name("Variavel2");
-
-	//scene.add(gui);
 	gui.open();
 
 }
@@ -5988,11 +7692,6 @@ var init = function (){
 					);
 
 	
-
-	// geometriaA = new THREE.Mesh(new THREE.BoxGeometry(4, 4, 4), new THREE.MeshBasicMaterial({ color: 0xff0000}));
-	// geometriaA.position.x = -8;
-	// scene.add(geometriaA);
-	
 	renderer = new THREE.WebGLRenderer({antialias: true});
 	renderer.shadowMap.enabled = true;
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -6003,8 +7702,6 @@ var init = function (){
 	camera.position.y = 10;
 	
 	createGui();
-
-	//criaMonstro();	
 
 	objLoading();
 
@@ -6037,7 +7734,6 @@ var init = function (){
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 	//scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
-
 
 	document.addEventListener('keydown', apertouButao);
 	document.addEventListener('keyup', soltouBotao);
@@ -6156,16 +7852,9 @@ var animation = function (){
 				// 			collisionResults[0].object.material.opacity = 0.4;
 				// 		}
 				// 	}
-
-				
 			}
 		});
-
-
 	}
-	
-
-
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
 
