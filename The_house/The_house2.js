@@ -13,7 +13,7 @@ var objLoading = function(){
 	// Carregando Cachorro
 	let loaderFBX1 = new THREE.FBXLoader();
 	loaderFBX1.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Cachorro.fbx',//arquivo que vamos buscar
+		'assets/Cachorro.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['cachorro'] = obj;
@@ -50,7 +50,7 @@ var objLoading = function(){
     // Carregando Lareira
 	loader1 = new THREE.OBJLoader();
 	loader1.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Lareira1.obj',//arquivo que vamos buscar
+		'assets/Lareira1.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['lareira'] = obj;
@@ -91,7 +91,7 @@ var objLoading = function(){
 	// Carregando Poltrona 1
 	let loaderFBX2 = new THREE.FBXLoader();
 	loaderFBX2.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Poltrona.fbx',//arquivo que vamos buscar
+		'assets/Poltrona.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['poltrona1'] = obj;
@@ -138,7 +138,7 @@ var objLoading = function(){
 	// Carregando Bide
 	let loaderFBX3 = new THREE.FBXLoader();
 	loaderFBX3.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Bide.fbx',//arquivo que vamos buscar
+		'assets/Bide.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['bide'] = obj;
@@ -186,7 +186,7 @@ var objLoading = function(){
 	// Carregando Poltrona 2
 	let loaderFBX4 = new THREE.FBXLoader();
 	loaderFBX4.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Poltrona.fbx',//arquivo que vamos buscar
+		'assets/Poltrona.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['poltrona2'] = obj;
@@ -234,7 +234,7 @@ var objLoading = function(){
 	// Carregando Sofa
 	let loaderFBX5 = new THREE.FBXLoader();
 	loaderFBX5.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Sofa.fbx',//arquivo que vamos buscar
+		'assets/Sofa.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['sofa'] = obj;
@@ -284,7 +284,7 @@ var objLoading = function(){
 	// Carregando Lustre
 	let loaderFBX6 = new THREE.FBXLoader();
 	loaderFBX6.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Lustre.fbx',//arquivo que vamos buscar
+		'assets/Lustre.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['lustre'] = obj;
@@ -332,7 +332,7 @@ var objLoading = function(){
 	// Carregando Ratos
 	let loaderFBX7 = new THREE.FBXLoader();
 	loaderFBX7.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Ratos.fbx',//arquivo que vamos buscar
+		'assets/Ratos.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['ratos'] = obj;
@@ -370,7 +370,7 @@ var objLoading = function(){
 	// Carregando Gato 1
 	let loaderFBX8 = new THREE.FBXLoader();
 	loaderFBX8.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato1.fbx',//arquivo que vamos buscar
+		'assets/Gato1.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato1'] = obj;
@@ -408,7 +408,7 @@ var objLoading = function(){
 	// Carregando Gato 2
 	loader2 = new THREE.OBJLoader();
 	loader2.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato2'] = obj;
@@ -451,7 +451,7 @@ var objLoading = function(){
 	// Carregando Gato 3
 	let loaderFBX9 = new THREE.FBXLoader();
 	loaderFBX9.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato1.fbx',//arquivo que vamos buscar
+		'assets/Gato1.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato3'] = obj;
@@ -489,7 +489,7 @@ var objLoading = function(){
 	// Carregando Gato 4
 	loader4 = new THREE.OBJLoader();
 	loader4.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato4'] = obj;
@@ -532,7 +532,7 @@ var objLoading = function(){
 	// Carregando Gato 5
 	loader5 = new THREE.OBJLoader();
 	loader5.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato5'] = obj;
@@ -575,7 +575,7 @@ var objLoading = function(){
 	// Carregando Gato 6
 	loader6 = new THREE.OBJLoader();
 	loader6.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato6'] = obj;
@@ -618,7 +618,7 @@ var objLoading = function(){
 	// Carregando Gato 7
 	loader7 = new THREE.OBJLoader();
 	loader7.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato7'] = obj;
@@ -661,7 +661,7 @@ var objLoading = function(){
 	// Carregando Gato 8
 	loader8 = new THREE.OBJLoader();
 	loader8.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato8'] = obj;
@@ -704,7 +704,7 @@ var objLoading = function(){
 	// Carregando Gato 9
 	loader9 = new THREE.OBJLoader();
 	loader9.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato9'] = obj;
@@ -747,7 +747,7 @@ var objLoading = function(){
 	// Carregando Gato 10
 	loader10 = new THREE.OBJLoader();
 	loader10.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato10'] = obj;
@@ -790,7 +790,7 @@ var objLoading = function(){
 	// Carregando Gato 11
 	loader11 = new THREE.OBJLoader();
 	loader11.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato11'] = obj;
@@ -833,7 +833,7 @@ var objLoading = function(){
 	// Carregando Gato 12
 	loader12 = new THREE.OBJLoader();
 	loader12.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato12'] = obj;
@@ -876,7 +876,7 @@ var objLoading = function(){
 	// Carregando Gato 13
 	loader13 = new THREE.OBJLoader();
 	loader13.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato13'] = obj;
@@ -919,7 +919,7 @@ var objLoading = function(){
 	// Carregando Gato 14
 	loader14 = new THREE.OBJLoader();
 	loader14.load(
-		'/home/karenmentges/Área de Trabalho/CG/The_house/assets/Gato2.obj',//arquivo que vamos buscar
+		'assets/Gato2.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['gato14'] = obj;
