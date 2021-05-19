@@ -14022,7 +14022,7 @@ var objLoading = function(){
 
 
 	loaderFBX.load(
-		'assets/Fence_90_Modular.fbx',//arquivo que vamos buscar
+		'assets/Crate.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['Torch'] = obj;
@@ -14032,8 +14032,104 @@ var objLoading = function(){
 			obj.scale.x = 0.25;
 
 			obj.position.y = -5.6;
-			obj.position.x = 0;
-			obj.position.z = -100;
+			obj.position.x = -220;
+			obj.position.z = -250;
+
+			obj.rotation.y = -2.2;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Crate.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -5.6;
+			obj.position.x = -180;
+			obj.position.z = -280;
+
+			obj.rotation.y = -2.2;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Crate.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = -5.6;
+			obj.position.x = -220;
+			obj.position.z = -310;
+
+			obj.rotation.y = -2.2;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Crate.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 25;
+			obj.position.x = -205;
+			obj.position.z = -280;
 
 			obj.rotation.y = -2.2;
 
@@ -14055,6 +14151,72 @@ var objLoading = function(){
 	);
 
 
+
+	loaderFBX.load(
+		'assets/Sword_WallMount.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 70;
+			obj.position.x = -75;
+			obj.position.z = 2;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Sword_WallMount.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 70;
+			obj.position.x = 75;
+			obj.position.z = 10;
+
+			obj.rotation.y = -3.1;
+
+			scene.add(new THREE.BoxHelper(obj, 0xffffff));
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	
+
+
 	loaderFBX.load(
 		'assets/Torch.fbx',//arquivo que vamos buscar
 		function(obj){
@@ -14065,7 +14227,7 @@ var objLoading = function(){
 			obj.scale.z = 0.25;
 			obj.scale.x = 0.25;
 
-			obj.position.y = -5.6;
+			obj.position.y = -10.6;
 			obj.position.x = 0;
 			obj.position.z = -250;
 
@@ -14424,13 +14586,8 @@ var ambientLightOn = function (){
 	scene.add(lights['ambient']);
 }
 
-var hemisphereLightOn = function(){
-	lights['hemisphere'] = new THREE.HemisphereLight(0xcce0ff, 0xffffff, 1);
-	scene.add(lights['hemisphere']);
-}
-
 var directionalLightOn = function () {
-	let light = new THREE.DirectionalLight(0xffffff,1);
+	let light = new THREE.DirectionalLight(0xffffff, 0.3);
 	light.castShadow = true;
 	light.shadow.mapSize.width = 4096;
     light.shadow.mapSize.height = 4096;
@@ -14442,7 +14599,6 @@ var directionalLightOn = function () {
 	light.position.y = 200;
 	light.position.x = 100;
 	light.target = ground;
-
 
 	scene.add(light);
 	scene.add(light.target)
@@ -14479,8 +14635,7 @@ var pointLightOn = function (){
 }
 
 var godSaysLightsOn = function (){
-	//hemisphereLightOn();
-	//directionalLightOn();
+	directionalLightOn();
 	//spotLightOn();
 	//pointLightOn();
 	ambientLightOn();
