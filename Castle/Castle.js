@@ -13,7 +13,7 @@ var geometriaA;
 
 var lights =[];
 
-var wizardVelocity = 10;
+var wizardVelocity = 5;
 
 //variaveis para animação
 var mixer;
@@ -14260,8 +14260,6 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = 180;
 
-			obj.rotation.y = 3;
-
 			char = new THREE.Group();
 			char.add(camera);
 			char.add(obj);
@@ -14299,7 +14297,7 @@ const setAction = function(toAction) {
 }
 
 var ambientLightOn = function (){
-	lights['ambient'] = new THREE.AmbientLight(0xffffff, 1.5);
+	lights['ambient'] = new THREE.AmbientLight(0xffffff, 0.5);
 	scene.add(lights['ambient']);
 }
 
@@ -14467,7 +14465,7 @@ var init = function (){
 
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-	//scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
+	scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
 
 	document.addEventListener('keydown', apertouButao);
 	document.addEventListener('keyup', soltouBotao);
@@ -14501,7 +14499,7 @@ var apertouButao =  function(e){
 
 	if (e.keyCode == 32){ // space
 		setAction(animationActions[0]);
-		wizardVelocity = 5;
+		wizardVelocity = 1;
 	}
 	if (e.keyCode == 38){ //down
 		keys['down'] = true;
@@ -14513,10 +14511,10 @@ var apertouButao =  function(e){
 		
 	}
 	if (e.keyCode == 37){ //left
-		char.position.x -= 5;
+		char.position.x -= 0.5;
 	}
 	if (e.keyCode == 39){ // right
-		char.position.x += 5;
+		char.position.x += 0.5;
 		
 	}
 
