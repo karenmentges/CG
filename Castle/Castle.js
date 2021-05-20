@@ -13029,12 +13029,7 @@ var objLoading = function(){
 
 			obj.rotation.y = 3.15;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Banner");
 
 		},//Oque acontece quando terminar!
@@ -13061,12 +13056,7 @@ var objLoading = function(){
 
 			obj.rotation.y = 3.15;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Banner");
 
 		},//Oque acontece quando terminar!
@@ -13091,12 +13081,7 @@ var objLoading = function(){
 			obj.position.x = -180;
 			obj.position.z = -545;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Banner");
 
 		},//Oque acontece quando terminar!
@@ -13121,12 +13106,7 @@ var objLoading = function(){
 			obj.position.x = 180;
 			obj.position.z = -545;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Banner");
 
 		},//Oque acontece quando terminar!
@@ -13762,12 +13742,7 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = -650;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -13792,12 +13767,7 @@ var objLoading = function(){
 			obj.position.x = 50;
 			obj.position.z = -650;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -13822,12 +13792,7 @@ var objLoading = function(){
 			obj.position.x = -50;
 			obj.position.z = -650;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -13852,12 +13817,7 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = -700;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -13882,12 +13842,7 @@ var objLoading = function(){
 			obj.position.x = 50;
 			obj.position.z = -700;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -13912,12 +13867,7 @@ var objLoading = function(){
 			obj.position.x = -50;
 			obj.position.z = -700;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -13942,12 +13892,7 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = -750;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -13972,12 +13917,7 @@ var objLoading = function(){
 			obj.position.x = 50;
 			obj.position.z = -750;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -14002,12 +13942,7 @@ var objLoading = function(){
 			obj.position.x = -50;
 			obj.position.z = -750;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Spikes");
 
 		},//Oque acontece quando terminar!
@@ -14025,7 +13960,7 @@ var objLoading = function(){
 		'assets/Crate.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Torch'] = obj;
+			elementos['Crate'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -14043,7 +13978,7 @@ var objLoading = function(){
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
 			staticBounding.push(objBox);
-			console.log("Carregou Torch");
+			console.log("Carregou Crate");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -14057,7 +13992,7 @@ var objLoading = function(){
 		'assets/Crate.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Torch'] = obj;
+			elementos['Crate'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -14075,7 +14010,7 @@ var objLoading = function(){
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
 			staticBounding.push(objBox);
-			console.log("Carregou Torch");
+			console.log("Carregou Crate");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -14089,7 +14024,7 @@ var objLoading = function(){
 		'assets/Crate.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Torch'] = obj;
+			elementos['Crate'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -14107,7 +14042,7 @@ var objLoading = function(){
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
 			staticBounding.push(objBox);
-			console.log("Carregou Torch");
+			console.log("Carregou Crate");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -14121,7 +14056,7 @@ var objLoading = function(){
 		'assets/Crate.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Torch'] = obj;
+			elementos['Crate'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -14139,7 +14074,7 @@ var objLoading = function(){
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
 			staticBounding.push(objBox);
-			console.log("Carregou Torch");
+			console.log("Carregou Crate");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -14156,7 +14091,7 @@ var objLoading = function(){
 		'assets/Sword_WallMount.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Torch'] = obj;
+			elementos['Sword'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -14166,13 +14101,8 @@ var objLoading = function(){
 			obj.position.x = -75;
 			obj.position.z = 2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
-			console.log("Carregou Torch");
+			console.log("Carregou Sword");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -14186,7 +14116,7 @@ var objLoading = function(){
 		'assets/Sword_WallMount.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['Torch'] = obj;
+			elementos['Sword'] = obj;
 
 			obj.scale.y = 0.25;
 			obj.scale.z = 0.25;
@@ -14198,13 +14128,8 @@ var objLoading = function(){
 
 			obj.rotation.y = -3.1;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
-			console.log("Carregou Torch");
+			console.log("Carregou Sword");
 
 		},//Oque acontece quando terminar!
 		function(andamento){
@@ -14227,18 +14152,11 @@ var objLoading = function(){
 			obj.scale.z = 0.25;
 			obj.scale.x = 0.25;
 
-			obj.position.y = -10.6;
-			obj.position.x = 0;
-			obj.position.z = -250;
+			obj.position.y = 60;
+			obj.position.x = -108;
+			obj.position.z = 25;
 
-			obj.rotation.y = -2.2;
-
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Torch");
 
 		},//Oque acontece quando terminar!
@@ -14249,8 +14167,347 @@ var objLoading = function(){
 			console.log(" Deu merda!: "+ error);
 		}//o que acontece se der merda.
 	);
-	
-	
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 108;
+			obj.position.z = 25;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = -108;
+			obj.position.z = -10;
+
+			obj.rotation.y = 3.2;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 108;
+			obj.position.z = -10;
+
+			obj.rotation.y = 3.2;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = -250;
+			obj.position.z = -192;
+
+			obj.rotation.y = 1.6;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 240;
+			obj.position.z = -192;
+
+			obj.rotation.y = -1.6;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = -250;
+			obj.position.z = -358;
+
+			obj.rotation.y = 1.6;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 240;
+			obj.position.z = -358;
+
+			obj.rotation.y = -1.6;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = -80;
+			obj.position.z = -538;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 80;
+			obj.position.z = -538;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 560;
+			obj.position.z = -275;
+
+			obj.rotation.y = -1.6;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 550;
+			obj.position.z = -935;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = 0;
+			obj.position.z = -1010;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loaderFBX.load(
+		'assets/Torch.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Torch'] = obj;
+
+			obj.scale.y = 0.25;
+			obj.scale.z = 0.25;
+			obj.scale.x = 0.25;
+
+			obj.position.y = 60;
+			obj.position.x = -60;
+			obj.position.z = -900;
+
+			obj.rotation.y = 1.6;
+
+			scene.add(obj);
+			console.log("Carregou Torch");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
 
 
 
@@ -14582,7 +14839,7 @@ const setAction = function(toAction) {
 }
 
 var ambientLightOn = function (){
-	lights['ambient'] = new THREE.AmbientLight(0xffffff, 2.5);
+	lights['ambient'] = new THREE.AmbientLight(0xffffff, 1.5);
 	scene.add(lights['ambient']);
 }
 
@@ -14606,39 +14863,96 @@ var directionalLightOn = function () {
 	lights['directional'] = light;
 }
 
-var spotLightOn = function(){
-	let spot = new THREE.SpotLight(0xffffff, 0);
-	spot.angle = 0.3;
-	spot.castShadow = true;
-
-	spot.position.z = 40;
-	spot.position.y = 15;
-
-	spot.shadow.distance = 20;
-	spot.shadow.penumbra = 30;
-	spot.shadow.angle = 25;
-	
-	spot.target.position.set(0,5,0);
-
-	lights['spot'] = spot;
-	scene.add(spot);
-}
-
 var pointLightOn = function (){
-	let point = new THREE.PointLight(0xffffff, 3, 200);
-	lights['point'] = point;
-	point.castShadow = true;
-	point.position.y=10;
-	point.position.z = 10;
+	let point1 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point1'] = point1;
+	point1.castShadow = true;
+	point1.position.set(-235, 65, -192);
+	scene.add(point1);
 
-	scene.add(point);
+	let point2 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point2'] = point2;
+	point2.castShadow = true;
+	point2.position.set(225, 65, -192);
+	scene.add(point2);
+
+	let point3 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point3'] = point3;
+	point3.castShadow = true;
+	point3.position.set(-235, 65, -358);
+	scene.add(point3);
+
+	let point4 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point4'] = point4;
+	point4.castShadow = true;
+	point4.position.set(225, 65, -358);
+	scene.add(point4);
+
+	let point5 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point5'] = point5;
+	point5.castShadow = true;
+	point5.position.set(-108, 65, -25);
+	scene.add(point5);
+
+	let point6 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point6'] = point6;
+	point6.castShadow = true;
+	point6.position.set(108, 65, -25);
+	scene.add(point6);
+
+	let point7 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point7'] = point7;
+	point7.castShadow = true;
+	point7.position.set(-108, 65, 40);
+	scene.add(point7);
+
+	let point8 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point8'] = point8;
+	point8.castShadow = true;
+	point8.position.set(108, 65, 40);
+	scene.add(point8);
+
+	let point9 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point9'] = point9;
+	point9.castShadow = true;
+	point9.position.set(-80, 65, -523);
+	scene.add(point9);
+
+	let point10 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point10'] = point10;
+	point10.castShadow = true;
+	point10.position.set(80, 65, -523);
+	scene.add(point10);
+
+	let point11 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point11'] = point11;
+	point11.castShadow = true;
+	point11.position.set(545, 65, -275);
+	scene.add(point11);
+
+	let point12 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point12'] = point12;
+	point12.castShadow = true;
+	point12.position.set(550, 65, -920);
+	scene.add(point12);
+
+	let point13 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point13'] = point13;
+	point13.castShadow = true;
+	point13.position.set(0, 65, -995);
+	scene.add(point13);
+
+	let point14 = new THREE.PointLight(0xffa500, 1.5, 150);
+	lights['point14'] = point14;
+	point14.castShadow = true;
+	point14.position.set(-45, 65, -900);
+	scene.add(point14);
 }
 
 var godSaysLightsOn = function (){
 	directionalLightOn();
-	//spotLightOn();
-	//pointLightOn();
 	ambientLightOn();
+	pointLightOn();
 }
 
 
