@@ -14171,46 +14171,83 @@ var objLoading = function(){
 	
 	///////////////////////////////////////////////////////////////////////////////////////////
 
-
 	loaderFBX.load(
-		'wizard/Wizard.fbx',//arquivo que vamos buscar
+		'wizard/Wizard_Idle.fbx',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['Wizard'] = obj;
 
 			let animation;
+
 			mixer = new THREE.AnimationMixer(obj);
 
-			animation = mixer.clipAction('wizard/Wizard_Attack.fbx');
-			animationActions.push(animation);
+			console.log(obj);
 
-			animation = mixer.clipAction('wizard/Wizard_Damage.fbx');
+			animation = mixer.clipAction(obj.animations[0]);
 			animationActions.push(animation);
-
-			animation = mixer.clipAction('wizard/Wizard_Dead.fbx');
-			animationActions.push(animation);
-
-			animation = mixer.clipAction('wizard/Wizard_Idle.fbx');
-			animationActions.push(animation);
-
-			animation = mixer.clipAction('wizard/Wizard_Jump.fbx');
-			animationActions.push(animation);
-
-			animation = mixer.clipAction('wizard/Wizard_Walking.fbx');
-			animationActions.push(animation);
-
 			activeAction = animation;
+			setAction(animation);
 
+
+			loaderFBX.load(
+						'wizard/Wizard_Jump.fbx', //arquivo que vamos carregar
+						function(object){
+							let animationAction = mixer.clipAction((object).animations[0]);
+							animationActions.push(animationAction)        
+							loaderFBX.load(
+								'wizard/Wizard_Damage.fbx', //arquivo que vamos carregar
+								function(object){
+									let animationAction = mixer.clipAction((object).animations[0]);
+									animationActions.push(animationAction)         
+									activeAction = animationAction;
+									setAction(animationAction);
+									loaderFBX.load(
+										'wizard/Wizard_Walking.fbx', //arquivo que vamos carregar
+										function(object){
+											let animationAction = mixer.clipAction((object).animations[0]);
+											animationActions.push(animationAction)         
+											activeAction = animationAction;
+											setAction(animationAction);
+											loaderFBX.load(
+												'wizard/Wizard_Attack.fbx', //arquivo que vamos carregar
+												function(object){
+													let animationAction = mixer.clipAction((object).animations[0]);
+													animationActions.push(animationAction)         
+													activeAction = animationAction;
+													setAction(animationAction);
+													loaderFBX.load(
+														'wizard/Wizard_Dead.fbx', //arquivo que vamos carregar
+														function(object){
+															let animationAction = mixer.clipAction((object).animations[0]);
+															animationActions.push(animationAction)         
+															activeAction = animationAction;
+															setAction(animationAction);
+														});
+												});
+										});
+								});
+						});
+
+			
+			// adiciona as animações a GUI
+			// animationFolder.add(parametrosGUI, "idle");
+			// animationFolder.add(parametrosGUI, "Jump");
+			// animationFolder.add(parametrosGUI, "Damage");
+			// animationFolder.add(parametrosGUI, "Walking");
+			// animationFolder.add(parametrosGUI, "Attack");
+			// animationFolder.add(parametrosGUI, "Dead");
+			let cont = 0;
 			
 			obj.traverse( function (child){
 					
 					if (child instanceof THREE.Mesh){
+						//child.material = new THREE.MeshStandardMaterial();
 						child.material.map = new THREE.TextureLoader().load("wizard/UVWizard.png");
 						
 						child.material.shininess = 0;
 						child.castShadow = true;
 						child.receiveShadow = true;
-						console.log("Aqui lol");
+						console.log("Aqui lol " + ++cont);
 					}
 				}
 			);
@@ -14232,12 +14269,9 @@ var objLoading = function(){
 			obj.rotation.y-= Math.PI;
 
 			charObj = obj;
-
 			obj.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(obj);
-			// scene.add(objBox);
 			charBounding = objBox;
-
 
 			scene.add(char);
 			console.log("Carregou Wizard");
@@ -14245,13 +14279,19 @@ var objLoading = function(){
 
 		});
 
-
 };
 //troca a ação do nosso modelo
 const setAction = function(toAction) {
     if (toAction != activeAction) {
         lastAction = activeAction;
         activeAction = toAction;
+		if (toAction == animationActions[5]){ //se é a morte toca uma vez só
+			activeAction.clampWhenFinished = true;
+			activeAction.loop = THREE.LoopOnce;
+		}else{
+			activeAction.clampWhenFinished = false;
+			activeAction.loop = THREE.LoopRepeat ;
+		}
         lastAction.stop();
         activeAction.reset();
         activeAction.play();
@@ -14441,43 +14481,45 @@ var keys = [];
 var soltouBotao = function(e){
 
 	if (e.keyCode == 32){ //espaço
-		setAction(animationActions[3]);
-		wolfVelocity = 0.1;
+		setAction(animationActions[4]);
+		wolfVelocity = 0.05;
 	}
 	if (e.keyCode == 38){ //down
 		keys['down'] = false;
-		setAction(animationActions[3]);
+		setAction(animationActions[0]);
 	}
 	if (e.keyCode == 40){ // up
 		keys['up'] = false;
-		setAction(animationActions[3]);
+		setAction(animationActions[0]);
 		
 	}
+
 }
 
 var apertouButao =  function(e){
 	console.log(e.keyCode);
 
 	if (e.keyCode == 32){ // space
-		setAction(animationActions[5]);
-		wizardVelocity= 0.5;
+		setAction(animationActions[0]);
+		wizardVelocity = 5;
 	}
 	if (e.keyCode == 38){ //down
 		keys['down'] = true;
-		setAction(animationActions[5]);
+		setAction(animationActions[3]);
 	}
 	if (e.keyCode == 40){ // up
-		setAction(animationActions[5]);
+		setAction(animationActions[3]);
 		keys['up'] = true;
 		
 	}
 	if (e.keyCode == 37){ //left
-		char.position.x -= 0.1;
+		char.position.x -= 5;
 	}
 	if (e.keyCode == 39){ // right
-		char.position.x += 0.1;
+		char.position.x += 5;
 		
 	}
+
 }
 
 var animation = function (){
@@ -14498,9 +14540,7 @@ var animation = function (){
 		//teste de colisao
 		staticBounding.forEach(function(item){
 			if (item.intersectsBox(charBounding)){
-				setAction(animationActions[3]);
-				activeAction.clampWhenFinished = true;
-				activeAction.loop = THREE.LoopOnce;
+				setAction(animationActions[5]);
 			}
 		});
 	}
