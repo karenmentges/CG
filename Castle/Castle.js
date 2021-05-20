@@ -13,7 +13,7 @@ var geometriaA;
 
 var lights =[];
 
-var wolfVelocity = 0.5;
+var wizardVelocity = 1;
 
 //variaveis para animação
 var mixer;
@@ -14510,95 +14510,10 @@ var objLoading = function(){
 	);
 
 
-
 	///////////////////////////////////////////////////////////////////////////////////////////
 
 
 	//////////////////////////////////// ENVOIROMENT //////////////////////////////////////////
-
-
-	//Load do Wolf
-	loaderFBX.load(
-		'../assets/wolf/Wolf.fbx',//arquivo que vamos buscar
-		function(obj){
-			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['wolf'] = obj;
-
-			let animation;
-
-			mixer = new THREE.AnimationMixer(obj);
-			animation = mixer.clipAction(obj.animations[0]);
-			animationActions.push(animation);
-
-			animation = mixer.clipAction(obj.animations[1]);
-			animationActions.push(animation);
-
-			animation = mixer.clipAction(obj.animations[2]);
-			animationActions.push(animation);
-
-			animation = mixer.clipAction(obj.animations[3]);
-			animationActions.push(animation);
-
-			animation = mixer.clipAction(obj.animations[4]);
-			animationActions.push(animation);
-
-			animation = mixer.clipAction(obj.animations[5]);
-			animationActions.push(animation);
-
-			activeAction = animation;
-
-			//adiciona as animações a GUI
-			animationFolder.add(parametrosGUI, "idle");
-			animationFolder.add(parametrosGUI, "sit");
-			animationFolder.add(parametrosGUI, "run");
-			animationFolder.add(parametrosGUI, "walk");
-			animationFolder.add(parametrosGUI, "creep");
-			animationFolder.add(parametrosGUI, "seiNao");
-
-			
-			obj.traverse( function (child){
-					
-					if (child instanceof THREE.Mesh){
-						//child.material = new THREE.MeshStandardMaterial();
-						child.material.map = new THREE.TextureLoader().load("../assets/wolf/Wolf_Body.jpg");
-						
-						child.material.shininess = 0;
-						child.castShadow = true;
-						child.receiveShadow = true;
-						console.log("Aqui lol");
-					}
-				}
-			);
-
-			 obj.scale.y = 0.1;
-			 obj.scale.z = 0.1;
-			 obj.scale.x = 0.1;
-
-			obj.position.y = 50;
-			obj.position.x = 0;
-			obj.position.z = -800;
-
-			char = new THREE.Group();
-			char.add(camera);
-			char.add(obj);
-			
-			obj.rotation.y-= Math.PI;
-			charHelper =  new THREE.BoxHelper(obj, 0xff0000);
-			scene.add(charHelper);
-
-			charObj = obj;
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			// scene.add(objBox);
-			charBounding = objBox;
-
-
-			scene.add(char);
-			console.log("Carregou Wolf");
-			loadFinished = true;
-
-		});
 
 
 	loader.load(
@@ -14661,7 +14576,7 @@ var objLoading = function(){
 			object.position.y = -7;
 
 			object.castShadow = true;
-			scene.add(new THREE.BoxHelper(object, 0xffffff));
+			//scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
 			let objBox = new THREE.Box3().setFromObject(object.children[0]);
 			staticBounding.push(objBox);
@@ -14824,6 +14739,84 @@ var objLoading = function(){
 		} //metodo deu merda
 	);
 
+
+	///////////////////////////////////////////////////////////////////////////////////////////
+
+
+	loaderFBX.load(
+		'wizard/Wizard.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['Wizard'] = obj;
+
+			let animation;
+			mixer = new THREE.AnimationMixer(obj);
+
+			animation = mixer.clipAction('wizard/Wizard_Attack.fbx');
+			animationActions.push(animation);
+
+			animation = mixer.clipAction('wizard/Wizard_Damage.fbx');
+			animationActions.push(animation);
+
+			animation = mixer.clipAction('wizard/Wizard_Dead.fbx');
+			animationActions.push(animation);
+
+			animation = mixer.clipAction('wizard/Wizard_Idle.fbx');
+			animationActions.push(animation);
+
+			animation = mixer.clipAction('wizard/Wizard_Jump.fbx');
+			animationActions.push(animation);
+
+			animation = mixer.clipAction('wizard/Wizard_Walking.fbx');
+			animationActions.push(animation);
+
+			activeAction = animation;
+
+			
+			obj.traverse( function (child){
+					
+					if (child instanceof THREE.Mesh){
+						child.material.map = new THREE.TextureLoader().load("wizard/UVWizard.png");
+						
+						child.material.shininess = 0;
+						child.castShadow = true;
+						child.receiveShadow = true;
+						console.log("Aqui lol");
+					}
+				}
+			);
+
+			obj.scale.y = 0.03;
+			obj.scale.z = 0.03;
+			obj.scale.x = 0.03;
+
+			obj.position.y = -2;
+			obj.position.x = 0;
+			obj.position.z = 180;
+
+			obj.rotation.y = 3;
+
+			char = new THREE.Group();
+			char.add(camera);
+			char.add(obj);
+			
+			obj.rotation.y-= Math.PI;
+			charHelper =  new THREE.BoxHelper(obj, 0xff0000);
+			scene.add(charHelper);
+
+			charObj = obj;
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			// scene.add(objBox);
+			charBounding = objBox;
+
+
+			scene.add(char);
+			console.log("Carregou Wizard");
+			loadFinished = true;
+
+		});
 
 
 };
@@ -15005,8 +14998,6 @@ var init = function (){
 	scene.add(ground);
 	godSaysLightsOn();
 
-	//camera.add(lights["spot"]);
-
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 	//scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
@@ -15017,78 +15008,51 @@ var init = function (){
 };
 
 
-
-var key_r = false;
 var key_space = false;
-var key_q = false;
 var keys = [];
 
 var soltouBotao = function(e){
 
-	if (e.keyCode == 82){ //r
-		key_r = false;
-	}
 	if (e.keyCode == 32){ //espaço
-		key_space = false;
+		setAction(animationActions[3]);
+		wolfVelocity = 0.1;
 	}
-	if (e.keyCode == 81){ //espaço
-		setAction(animationActions[1]);
-		wolfVelocity= 0.05;
-	}
-	if (e.keyCode == 38){ //douwn
+	if (e.keyCode == 38){ //down
 		keys['down'] = false;
-		setAction(animationActions[4]);
-		//elementos["puppet"]["tronco"].position.z += 1;
+		setAction(animationActions[3]);
 	}
-	if (e.keyCode == 40){ // UP
+	if (e.keyCode == 40){ // up
 		keys['up'] = false;
-		setAction(animationActions[4]);
+		setAction(animationActions[3]);
 		
 	}
 }
-
 
 var apertouButao =  function(e){
 	console.log(e.keyCode);
 
-	if (e.keyCode == 82){ //r
-		elementos['cerberus'].rotation.x+=0.1;
-		key_r = true;
-	}
 	if (e.keyCode == 32){ // space
-		setAction(animationActions[0]);
-		wolfVelocity= 0.2;
+		setAction(animationActions[5]);
+		wizardVelocity= 0.5;
 	}
-
-	if (e.keyCode == 81){ // q
-		key_q = true;		
-	}
-
-	if (e.keyCode == 38){ //douwn
+	if (e.keyCode == 38){ //down
 		keys['down'] = true;
-		setAction(animationActions[1]);
-		//elementos["puppet"]["tronco"].position.z += 1;
+		setAction(animationActions[5]);
 	}
-	if (e.keyCode == 40){ // UP
-		setAction(animationActions[1]);
+	if (e.keyCode == 40){ // up
+		setAction(animationActions[5]);
 		keys['up'] = true;
 		
 	}
 	if (e.keyCode == 37){ //left
-		char.position.x-=0.1;
+		char.position.x -= 0.1;
 	}
 	if (e.keyCode == 39){ // right
-		char.position.x+=0.1;
+		char.position.x += 0.1;
 		
 	}
 }
 
-var count =0; 
-var velocidadeOmbroDireitoC = -0.01;
-var velocidadeOmbroDireitoL = -0.01;
-var pulando = false;
-var velocidadePulo = 0.5;
-var altura = -1;
 var animation = function (){
 	requestAnimationFrame(animation); 
 
@@ -15098,12 +15062,12 @@ var animation = function (){
 		mixer.update(delta);
 
 		if (keys['up'] == true){
-			char.position.z+=wolfVelocity;
+			char.position.z += wizardVelocity;
 		}else if(keys['down'] == true){
-			char.position.z-=wolfVelocity;
+			char.position.z -= wizardVelocity;
 		}
 		charHelper.update();
-		charBounding.setFromObject(elementos['wolf'].children[0]);
+		charBounding.setFromObject(elementos['Wizard'].children[0]);
 
 		//teste de colisao
 		staticBounding.forEach(function(item){
@@ -15111,23 +15075,6 @@ var animation = function (){
 				setAction(animationActions[3]);
 				activeAction.clampWhenFinished = true;
 				activeAction.loop = THREE.LoopOnce;
-
-				// let cube = elementos['wolf'].children[0];
-
-				//  for (var vertexIndex = 0; vertexIndex < elementos['wolf'].children[0].geometry.vertices.length; vertexIndex++) {
-				// 		var localVertex = cube.geometry.vertices[vertexIndex].clone();
-				// 		var globalVertex = localVertex.applyMatrix4(cube.matrix);
-				// 		var directionVector = globalVertex.sub(cube.position);
-	
-				// 		var ray = new THREE.Raycaster(originPoint, directionVector.clone().normalize());
-				// 		var collisionResults = ray.intersectObjects(elementos);
-				// 		if (collisionResults.length > 0 && collisionResults[0].distance < directionVector.length()) {
-				// 			console.log(collisionResults[0].object.name);
-				// 			console.log("CHupa");
-				// 			collisionResults[0].object.material.transparent = true;
-				// 			collisionResults[0].object.material.opacity = 0.4;
-				// 		}
-				// 	}
 			}
 		});
 	}
