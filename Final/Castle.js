@@ -14228,14 +14228,6 @@ var objLoading = function(){
 								});
 						});
 
-			
-			// adiciona as animações a GUI
-			// animationFolder.add(parametrosGUI, "idle");
-			// animationFolder.add(parametrosGUI, "Jump");
-			// animationFolder.add(parametrosGUI, "Damage");
-			// animationFolder.add(parametrosGUI, "Walking");
-			// animationFolder.add(parametrosGUI, "Attack");
-			// animationFolder.add(parametrosGUI, "Dead");
 			let cont = 0;
 			
 			obj.traverse( function (child){
@@ -14431,9 +14423,9 @@ var init = function (){
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
 		
-	camera.position.z = 100;
+	camera.position.z = 150;
 	camera.position.x = 0;
-	camera.position.y = 10;
+	camera.position.y = 15;
 
 	objLoading();
 
@@ -14528,19 +14520,19 @@ var apertouButao =  function(e){
 	}
 	if (e.keyCode == 87){ // w
 		keys['w'] = true;
-		camera.rotation.x += 0.1;
+		camera.rotation.x += 0.03;
 	}
 	if (e.keyCode == 83){ // s
 		keys['s'] = true;
-		camera.rotation.x -= 0.1;
+		camera.rotation.x -= 0.03;
 	}
 	if (e.keyCode == 65){ // a
 		keys['a'] = true;
-		char.rotation.y -= 0.1;
+		char.rotation.y -= 0.03;
 	}
 	if (e.keyCode == 68){ // d
 		keys['d'] = true;
-		char.rotation.y += 0.1;
+		char.rotation.y += 0.03;
 	}
 }
 
