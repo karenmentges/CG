@@ -13,7 +13,7 @@ var geometriaA;
 
 var lights =[];
 
-var wizardVelocity = 1;
+var wizardVelocity = 10;
 
 //variaveis para animação
 var mixer;
@@ -4932,6 +4932,7 @@ var objLoading = function(){
 ///////////////////////////////////////// CASTLE //////////////////////////////////////////
 	
 
+// Carrega a entrada
 	loaderFBX.load(
 		'assets/Arch.fbx',//arquivo que vamos buscar
 		function(obj){
@@ -4946,12 +4947,7 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
 			console.log("Carregou Arch");
 
 		},//Oque acontece quando terminar!
@@ -4963,6 +4959,7 @@ var objLoading = function(){
 		}//o que acontece se der merda.
 	);
 
+// Carrega as paredes
 	loaderFBX.load(
 		'assets/Wall_Modular.fbx',//arquivo que vamos buscar
 		function(obj){
@@ -4977,11 +4974,9 @@ var objLoading = function(){
 			obj.position.x = 75;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5007,11 +5002,9 @@ var objLoading = function(){
 			obj.position.x = 75;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5037,11 +5030,9 @@ var objLoading = function(){
 			obj.position.x = -75;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5067,11 +5058,9 @@ var objLoading = function(){
 			obj.position.x = -75;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5097,11 +5086,9 @@ var objLoading = function(){
 			obj.position.x = 143;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5127,11 +5114,9 @@ var objLoading = function(){
 			obj.position.x = 143;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5157,11 +5142,9 @@ var objLoading = function(){
 			obj.position.x = -143;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5187,11 +5170,9 @@ var objLoading = function(){
 			obj.position.x = -143;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5217,11 +5198,9 @@ var objLoading = function(){
 			obj.position.x = 193;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5247,11 +5226,9 @@ var objLoading = function(){
 			obj.position.x = 193;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5277,11 +5254,9 @@ var objLoading = function(){
 			obj.position.x = -193;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5307,11 +5282,9 @@ var objLoading = function(){
 			obj.position.x = -193;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5337,11 +5310,9 @@ var objLoading = function(){
 			obj.position.x = 243;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5367,11 +5338,9 @@ var objLoading = function(){
 			obj.position.x = 243;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5397,11 +5366,9 @@ var objLoading = function(){
 			obj.position.x = -243;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5427,11 +5394,9 @@ var objLoading = function(){
 			obj.position.x = -243;
 			obj.position.z = 12;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5460,11 +5425,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5492,11 +5455,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5524,11 +5485,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5556,11 +5515,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5588,11 +5545,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5620,11 +5575,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5652,11 +5605,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5684,11 +5635,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5716,11 +5665,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5748,11 +5695,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5780,11 +5725,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5812,11 +5755,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5844,11 +5785,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5876,11 +5815,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5908,11 +5845,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5940,11 +5875,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -5972,11 +5905,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6004,11 +5935,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6036,11 +5965,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6068,11 +5995,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6100,11 +6025,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6132,11 +6055,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6164,11 +6085,9 @@ var objLoading = function(){
 			obj.position.x = -225;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6194,11 +6113,9 @@ var objLoading = function(){
 			obj.position.x = -225;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6224,11 +6141,9 @@ var objLoading = function(){
 			obj.position.x = -175;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6254,11 +6169,9 @@ var objLoading = function(){
 			obj.position.x = -175;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6284,11 +6197,9 @@ var objLoading = function(){
 			obj.position.x = -125;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6314,11 +6225,9 @@ var objLoading = function(){
 			obj.position.x = -125;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6344,11 +6253,9 @@ var objLoading = function(){
 			obj.position.x = -100;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6375,11 +6282,9 @@ var objLoading = function(){
 			obj.position.x = -100;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6406,11 +6311,9 @@ var objLoading = function(){
 			obj.position.x = 225;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6436,11 +6339,9 @@ var objLoading = function(){
 			obj.position.x = 225;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6466,11 +6367,9 @@ var objLoading = function(){
 			obj.position.x = 175;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6496,11 +6395,9 @@ var objLoading = function(){
 			obj.position.x = 175;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6526,11 +6423,9 @@ var objLoading = function(){
 			obj.position.x = 125;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6556,11 +6451,9 @@ var objLoading = function(){
 			obj.position.x = 125;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6586,11 +6479,9 @@ var objLoading = function(){
 			obj.position.x = 100;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6616,11 +6507,9 @@ var objLoading = function(){
 			obj.position.x = 100;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6650,11 +6539,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6682,11 +6569,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6714,11 +6599,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6746,11 +6629,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6778,11 +6659,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6810,11 +6689,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6842,11 +6719,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6874,11 +6749,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6906,11 +6779,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6938,11 +6809,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -6970,11 +6839,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7002,11 +6869,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7034,11 +6899,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7066,11 +6929,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7098,11 +6959,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7130,11 +6989,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7162,11 +7019,9 @@ var objLoading = function(){
 			obj.position.x = 295;
 			obj.position.z = -363;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7192,11 +7047,9 @@ var objLoading = function(){
 			obj.position.x = 295;
 			obj.position.z = -363;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7222,11 +7075,9 @@ var objLoading = function(){
 			obj.position.x = 345;
 			obj.position.z = -363;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7252,11 +7103,9 @@ var objLoading = function(){
 			obj.position.x = 345;
 			obj.position.z = -363;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7282,11 +7131,9 @@ var objLoading = function(){
 			obj.position.x = 395;
 			obj.position.z = -363;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7312,11 +7159,9 @@ var objLoading = function(){
 			obj.position.x = 395;
 			obj.position.z = -363;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7342,11 +7187,9 @@ var objLoading = function(){
 			obj.position.x = 295;
 			obj.position.z = -187;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7372,11 +7215,9 @@ var objLoading = function(){
 			obj.position.x = 295;
 			obj.position.z = -187;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7402,11 +7243,9 @@ var objLoading = function(){
 			obj.position.x = 345;
 			obj.position.z = -187;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7432,11 +7271,9 @@ var objLoading = function(){
 			obj.position.x = 345;
 			obj.position.z = -187;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7462,11 +7299,9 @@ var objLoading = function(){
 			obj.position.x = 395;
 			obj.position.z = -187;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7492,11 +7327,9 @@ var objLoading = function(){
 			obj.position.x = 395;
 			obj.position.z = -187;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7526,11 +7359,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7558,11 +7389,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7590,11 +7419,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7622,11 +7449,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7654,11 +7479,9 @@ var objLoading = function(){
 			obj.position.x = 435;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7684,11 +7507,9 @@ var objLoading = function(){
 			obj.position.x = 435;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7714,11 +7535,9 @@ var objLoading = function(){
 			obj.position.x = 450;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7744,11 +7563,9 @@ var objLoading = function(){
 			obj.position.x = 450;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7774,11 +7591,9 @@ var objLoading = function(){
 			obj.position.x = 500;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7804,11 +7619,9 @@ var objLoading = function(){
 			obj.position.x = 500;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7834,11 +7647,9 @@ var objLoading = function(){
 			obj.position.x = 550;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7864,11 +7675,9 @@ var objLoading = function(){
 			obj.position.x = 550;
 			obj.position.z = -255;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7896,11 +7705,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7928,11 +7735,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7960,11 +7765,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -7992,11 +7795,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8024,11 +7825,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8056,11 +7855,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8088,11 +7885,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8120,11 +7915,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8152,11 +7945,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8184,11 +7975,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8216,11 +8005,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8248,11 +8035,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8280,11 +8065,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8312,11 +8095,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8344,11 +8125,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8376,11 +8155,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8408,11 +8185,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8440,11 +8215,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8472,11 +8245,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8504,11 +8275,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8536,11 +8305,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8568,11 +8335,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8600,11 +8365,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8632,11 +8395,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8664,11 +8425,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8696,11 +8455,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8728,11 +8485,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.755;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8760,11 +8515,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8790,11 +8543,9 @@ var objLoading = function(){
 			obj.position.x = 550;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8820,11 +8571,9 @@ var objLoading = function(){
 			obj.position.x = 550;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8850,11 +8599,9 @@ var objLoading = function(){
 			obj.position.x = 500;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8880,11 +8627,9 @@ var objLoading = function(){
 			obj.position.x = 500;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8910,11 +8655,9 @@ var objLoading = function(){
 			obj.position.x = 450;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8940,11 +8683,9 @@ var objLoading = function(){
 			obj.position.x = 450;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -8970,11 +8711,9 @@ var objLoading = function(){
 			obj.position.x = 400;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9000,11 +8739,9 @@ var objLoading = function(){
 			obj.position.x = 400;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9030,11 +8767,9 @@ var objLoading = function(){
 			obj.position.x = 350;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9060,11 +8795,9 @@ var objLoading = function(){
 			obj.position.x = 350;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9090,11 +8823,9 @@ var objLoading = function(){
 			obj.position.x = 300;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9120,11 +8851,9 @@ var objLoading = function(){
 			obj.position.x = 300;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9150,11 +8879,9 @@ var objLoading = function(){
 			obj.position.x = 250;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9180,11 +8907,9 @@ var objLoading = function(){
 			obj.position.x = 250;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9210,11 +8935,9 @@ var objLoading = function(){
 			obj.position.x = 200;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9240,11 +8963,9 @@ var objLoading = function(){
 			obj.position.x = 200;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9270,11 +8991,9 @@ var objLoading = function(){
 			obj.position.x = 150;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9300,11 +9019,9 @@ var objLoading = function(){
 			obj.position.x = 150;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9330,11 +9047,9 @@ var objLoading = function(){
 			obj.position.x = 100;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9360,11 +9075,9 @@ var objLoading = function(){
 			obj.position.x = 100;
 			obj.position.z = -945;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9392,11 +9105,9 @@ var objLoading = function(){
 			obj.position.x = 435;
 			obj.position.z = -295;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9422,11 +9133,9 @@ var objLoading = function(){
 			obj.position.x = 435;
 			obj.position.z = -295;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9452,11 +9161,9 @@ var objLoading = function(){
 			obj.position.x = 450;
 			obj.position.z = -295;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9482,11 +9189,9 @@ var objLoading = function(){
 			obj.position.x = 450;
 			obj.position.z = -295;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9512,11 +9217,9 @@ var objLoading = function(){
 			obj.position.x = 500;
 			obj.position.z = -295;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9542,11 +9245,9 @@ var objLoading = function(){
 			obj.position.x = 500;
 			obj.position.z = -295;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9574,11 +9275,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9606,11 +9305,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9638,11 +9335,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9670,11 +9365,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9702,11 +9395,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9734,11 +9425,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9766,11 +9455,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9798,11 +9485,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9830,11 +9515,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9862,11 +9545,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9894,11 +9575,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9926,11 +9605,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9958,11 +9635,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -9990,11 +9665,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10022,11 +9695,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10054,11 +9725,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10086,11 +9755,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10118,11 +9785,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10150,11 +9815,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10182,11 +9845,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10214,11 +9875,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10246,11 +9905,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10278,11 +9935,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10310,11 +9965,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10342,11 +9995,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10374,11 +10025,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10404,11 +10053,9 @@ var objLoading = function(){
 			obj.position.x = 510;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10434,11 +10081,9 @@ var objLoading = function(){
 			obj.position.x = 510;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10464,11 +10109,9 @@ var objLoading = function(){
 			obj.position.x = 460;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10494,11 +10137,9 @@ var objLoading = function(){
 			obj.position.x = 460;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10524,11 +10165,9 @@ var objLoading = function(){
 			obj.position.x = 410;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10554,11 +10193,9 @@ var objLoading = function(){
 			obj.position.x = 410;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10584,11 +10221,9 @@ var objLoading = function(){
 			obj.position.x = 360;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10614,11 +10249,9 @@ var objLoading = function(){
 			obj.position.x = 360;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10644,11 +10277,9 @@ var objLoading = function(){
 			obj.position.x = 310;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10674,11 +10305,9 @@ var objLoading = function(){
 			obj.position.x = 310;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10704,11 +10333,9 @@ var objLoading = function(){
 			obj.position.x = 260;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10734,11 +10361,9 @@ var objLoading = function(){
 			obj.position.x = 260;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10764,11 +10389,9 @@ var objLoading = function(){
 			obj.position.x = 210;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10794,11 +10417,9 @@ var objLoading = function(){
 			obj.position.x = 210;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10824,11 +10445,9 @@ var objLoading = function(){
 			obj.position.x = 160;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10854,11 +10473,9 @@ var objLoading = function(){
 			obj.position.x = 160;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10884,11 +10501,9 @@ var objLoading = function(){
 			obj.position.x = 150;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10914,11 +10529,9 @@ var objLoading = function(){
 			obj.position.x = 150;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10944,11 +10557,9 @@ var objLoading = function(){
 			obj.position.x = 100;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -10974,11 +10585,9 @@ var objLoading = function(){
 			obj.position.x = 100;
 			obj.position.z = -905;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11008,11 +10617,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11040,11 +10647,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11072,11 +10677,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11104,11 +10707,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11136,11 +10737,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11168,11 +10767,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11200,11 +10797,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11232,11 +10827,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11264,11 +10857,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11296,11 +10887,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11328,11 +10917,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11360,11 +10947,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11392,11 +10977,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11424,11 +11007,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11456,11 +11037,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11488,11 +11067,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11520,11 +11097,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11552,11 +11127,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11586,11 +11159,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11618,11 +11189,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11650,11 +11219,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11682,11 +11249,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11714,11 +11279,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11746,11 +11309,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11778,11 +11339,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11810,11 +11369,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11842,11 +11399,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11874,11 +11429,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11906,11 +11459,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11938,11 +11489,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -11970,11 +11519,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12002,11 +11549,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12034,11 +11579,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12066,11 +11609,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12098,11 +11639,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12130,11 +11669,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12162,11 +11699,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12194,11 +11729,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.75;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12226,11 +11759,9 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = -1020;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12256,11 +11787,9 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = -1020;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12286,11 +11815,9 @@ var objLoading = function(){
 			obj.position.x = 50;
 			obj.position.z = -1020;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12316,11 +11843,9 @@ var objLoading = function(){
 			obj.position.x = 50;
 			obj.position.z = -1020;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12346,11 +11871,9 @@ var objLoading = function(){
 			obj.position.x = -50;
 			obj.position.z = -1020;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12376,11 +11899,9 @@ var objLoading = function(){
 			obj.position.x = -50;
 			obj.position.z = -1020;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Wall");
 
@@ -12409,11 +11930,9 @@ var objLoading = function(){
 			obj.position.x = 108;
 			obj.position.z = 8;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12439,11 +11958,9 @@ var objLoading = function(){
 			obj.position.x = -108;
 			obj.position.z = 8;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12469,11 +11986,9 @@ var objLoading = function(){
 			obj.position.x = 258;
 			obj.position.z = 8;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12499,11 +12014,9 @@ var objLoading = function(){
 			obj.position.x = -258;
 			obj.position.z = 8;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12529,11 +12042,9 @@ var objLoading = function(){
 			obj.position.x = -258;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12559,11 +12070,9 @@ var objLoading = function(){
 			obj.position.x = -80;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12589,11 +12098,9 @@ var objLoading = function(){
 			obj.position.x = 80;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12619,11 +12126,9 @@ var objLoading = function(){
 			obj.position.x = 258;
 			obj.position.z = -558;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12649,11 +12154,9 @@ var objLoading = function(){
 			obj.position.x = 258;
 			obj.position.z = -358;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12679,11 +12182,9 @@ var objLoading = function(){
 			obj.position.x = 410;
 			obj.position.z = -358;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12709,11 +12210,9 @@ var objLoading = function(){
 			obj.position.x = 258;
 			obj.position.z = -192;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12739,11 +12238,9 @@ var objLoading = function(){
 			obj.position.x = 410;
 			obj.position.z = -192;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Column");
 
@@ -12772,11 +12269,9 @@ var objLoading = function(){
 			obj.position.x = 0;
 			obj.position.z = -600;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Stairs");
 
@@ -12802,11 +12297,9 @@ var objLoading = function(){
 			obj.position.x = 50;
 			obj.position.z = -600;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Stairs");
 
@@ -12832,11 +12325,9 @@ var objLoading = function(){
 			obj.position.x = -50;
 			obj.position.z = -600;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Stairs");
 
@@ -12864,11 +12355,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 9.43;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Stairs");
 
@@ -12896,11 +12385,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 9.43;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Stairs");
 
@@ -12928,11 +12415,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 9.43;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Stairs");
 
@@ -12967,11 +12452,9 @@ var objLoading = function(){
 			obj.position.x = 70;
 			obj.position.z = 45;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Banner");
 
@@ -12997,11 +12480,9 @@ var objLoading = function(){
 			obj.position.x = -70;
 			obj.position.z = 45;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Banner");
 
@@ -13136,11 +12617,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -1;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chest");
 
@@ -13168,11 +12647,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 1;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chest");
 
@@ -13200,11 +12677,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 2.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chest");
 
@@ -13232,11 +12707,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 1.55;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chest");
 
@@ -13264,11 +12737,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -1;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chest");
 
@@ -13296,11 +12767,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 1;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chest");
 
@@ -13328,11 +12797,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -2.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chest");
 
@@ -13361,11 +12828,9 @@ var objLoading = function(){
 			obj.position.x = 180;
 			obj.position.z = -100;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Table");
 
@@ -13393,11 +12858,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 7.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Skull");
 
@@ -13425,11 +12888,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -2.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chair");
 
@@ -13457,11 +12918,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.7;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chair");
 
@@ -13489,11 +12948,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 4.7;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chair");
 
@@ -13521,11 +12978,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 5.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Chair");
 
@@ -13554,11 +13009,9 @@ var objLoading = function(){
 			obj.position.x = -80;
 			obj.position.z = -600;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Statue");
 
@@ -13584,11 +13037,9 @@ var objLoading = function(){
 			obj.position.x = 80;
 			obj.position.z = -600;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Statue");
 
@@ -13617,11 +13068,9 @@ var objLoading = function(){
 			obj.position.x = -210;
 			obj.position.z = -30;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Barrel");
 
@@ -13647,11 +13096,9 @@ var objLoading = function(){
 			obj.position.x = -235;
 			obj.position.z = -50;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Barrel");
 
@@ -13677,11 +13124,9 @@ var objLoading = function(){
 			obj.position.x = -70;
 			obj.position.z = -30;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Barrel");
 
@@ -13709,11 +13154,9 @@ var objLoading = function(){
 
 			obj.rotation.y = 3.7;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Cobweb");
 
@@ -13972,11 +13415,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -2.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Crate");
 
@@ -14004,11 +13445,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -2.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Crate");
 
@@ -14036,11 +13475,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -2.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Crate");
 
@@ -14068,11 +13505,9 @@ var objLoading = function(){
 
 			obj.rotation.y = -2.2;
 
-			scene.add(new THREE.BoxHelper(obj, 0xffffff));
 			scene.add(obj);
-
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			staticBounding.push(objBox);
 			console.log("Carregou Crate");
 
@@ -14517,13 +13952,13 @@ var objLoading = function(){
 
 
 	loader.load(
-		'../assets/tree.obj', //arquivo que vamos carregar
+		'assets/tree.obj', //arquivo que vamos carregar
 		function(object){
 			
 			object.traverse( function ( child ) {
 						if ( child instanceof THREE.Mesh ) {
 							child.material = new THREE.MeshLambertMaterial();
-							child.material.map = new THREE.TextureLoader().load("../assets/texturas/Wood.jpg");
+							child.material.map = new THREE.TextureLoader().load("texture/Wood.jpg");
 							child.material.shininess = 0;
 							child.castShadow = true;
 							child.receiveShadow = true;
@@ -14539,9 +13974,8 @@ var objLoading = function(){
 			object.position.y = -7;
 
 			object.castShadow = true;
-			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(object.children[0]);
+			let objBox = new THREE.Box3().setFromObject(object);
 			staticBounding.push(objBox);
 
 			scene.add(object);    
@@ -14554,13 +13988,13 @@ var objLoading = function(){
 		} //metodo deu merda
 	);
 	loader.load(
-		'../assets/tree.obj', //arquivo que vamos carregar
+		'assets/tree.obj', //arquivo que vamos carregar
 		function(object){
 			
 			object.traverse( function ( child ) {
 						if ( child instanceof THREE.Mesh ) {
 							child.material = new THREE.MeshLambertMaterial();
-							child.material.map = new THREE.TextureLoader().load("../assets/texturas/Wood.jpg");
+							child.material.map = new THREE.TextureLoader().load("texture/Wood.jpg");
 							child.material.shininess = 0;
 							child.castShadow = true;
 							child.receiveShadow = true;
@@ -14576,9 +14010,8 @@ var objLoading = function(){
 			object.position.y = -7;
 
 			object.castShadow = true;
-			//scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(object.children[0]);
+			let objBox = new THREE.Box3().setFromObject(object);
 			staticBounding.push(objBox);
 
 			scene.add(object);    
@@ -14591,13 +14024,13 @@ var objLoading = function(){
 		} //metodo deu merda
 	);
 	loader.load(
-		'../assets/tree.obj', //arquivo que vamos carregar
+		'assets/tree.obj', //arquivo que vamos carregar
 		function(object){
 			
 			object.traverse( function ( child ) {
 						if ( child instanceof THREE.Mesh ) {
 							child.material = new THREE.MeshLambertMaterial();
-							child.material.map = new THREE.TextureLoader().load("../assets/texturas/Wood.jpg");
+							child.material.map = new THREE.TextureLoader().load("texture/Wood.jpg");
 							child.material.shininess = 0;
 							child.castShadow = true;
 							child.receiveShadow = true;
@@ -14613,9 +14046,8 @@ var objLoading = function(){
 			object.position.y = -7;
 
 			object.castShadow = true;
-			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(object.children[0]);
+			let objBox = new THREE.Box3().setFromObject(object);
 			staticBounding.push(objBox);
 
 			scene.add(object);    
@@ -14628,13 +14060,13 @@ var objLoading = function(){
 		} //metodo deu merda
 	);
 	loader.load(
-		'../assets/tree.obj', //arquivo que vamos carregar
+		'assets/tree.obj', //arquivo que vamos carregar
 		function(object){
 			
 			object.traverse( function ( child ) {
 						if ( child instanceof THREE.Mesh ) {
 							child.material = new THREE.MeshLambertMaterial();
-							child.material.map = new THREE.TextureLoader().load("../assets/texturas/Wood.jpg");
+							child.material.map = new THREE.TextureLoader().load("texture/Wood.jpg");
 							child.material.shininess = 0;
 							child.castShadow = true;
 							child.receiveShadow = true;
@@ -14650,9 +14082,8 @@ var objLoading = function(){
 			object.position.y = -7;
 
 			object.castShadow = true;
-			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(object.children[0]);
+			let objBox = new THREE.Box3().setFromObject(object);
 			staticBounding.push(objBox);
 
 			scene.add(object);    
@@ -14665,13 +14096,13 @@ var objLoading = function(){
 		} //metodo deu merda
 	);
 	loader.load(
-		'../assets/tree.obj', //arquivo que vamos carregar
+		'assets/tree.obj', //arquivo que vamos carregar
 		function(object){
 			
 			object.traverse( function ( child ) {
 						if ( child instanceof THREE.Mesh ) {
 							child.material = new THREE.MeshLambertMaterial();
-							child.material.map = new THREE.TextureLoader().load("../assets/texturas/Wood.jpg");
+							child.material.map = new THREE.TextureLoader().load("texture/Wood.jpg");
 							child.material.shininess = 0;
 							child.castShadow = true;
 							child.receiveShadow = true;
@@ -14687,9 +14118,8 @@ var objLoading = function(){
 			object.position.y = -7;
 
 			object.castShadow = true;
-			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(object.children[0]);
+			let objBox = new THREE.Box3().setFromObject(object);
 			staticBounding.push(objBox);
 
 			scene.add(object);    
@@ -14702,13 +14132,13 @@ var objLoading = function(){
 		} //metodo deu merda
 	);
 	loader.load(
-		'../assets/tree.obj', //arquivo que vamos carregar
+		'assets/tree.obj', //arquivo que vamos carregar
 		function(object){
 			
 			object.traverse( function ( child ) {
 						if ( child instanceof THREE.Mesh ) {
 							child.material = new THREE.MeshLambertMaterial();
-							child.material.map = new THREE.TextureLoader().load("../assets/texturas/Wood.jpg");
+							child.material.map = new THREE.TextureLoader().load("texture/Wood.jpg");
 							child.material.shininess = 0;
 							child.castShadow = true;
 							child.receiveShadow = true;
@@ -14724,9 +14154,8 @@ var objLoading = function(){
 			object.position.y = -7;
 
 			object.castShadow = true;
-			scene.add(new THREE.BoxHelper(object, 0xffffff));
 			object.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(object.children[0]);
+			let objBox = new THREE.Box3().setFromObject(object);
 			staticBounding.push(objBox);
 
 			scene.add(object);    
@@ -14738,8 +14167,8 @@ var objLoading = function(){
 			console.log("Deu caca: " + error);
 		} //metodo deu merda
 	);
-
-
+	
+	
 	///////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -14801,13 +14230,11 @@ var objLoading = function(){
 			char.add(obj);
 			
 			obj.rotation.y-= Math.PI;
-			charHelper =  new THREE.BoxHelper(obj, 0xff0000);
-			scene.add(charHelper);
 
 			charObj = obj;
 
 			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			let objBox = new THREE.Box3().setFromObject(obj);
 			// scene.add(objBox);
 			charBounding = objBox;
 
@@ -14979,13 +14406,13 @@ var init = function (){
 	
 	//criar um piso.
 	let textureLoad = new THREE.TextureLoader();
-	let groundTexture = textureLoad.load("../assets/texturas/terrain/grasslight-big.jpg"); //busca a imagem
+	let groundTexture = textureLoad.load("texture/grasslight-big.jpg"); //busca a imagem
 	groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping; //quero que ela se repita
 	groundTexture.encoding = THREE.sRGBEncoding; //padrão cores, sempre que existir será informado
 	groundTexture.repeat.set(25,25); //número de vezes que ela vai se repetir dentro do nosso chão
 	
 	let materialGround = new THREE.MeshLambertMaterial({map: groundTexture});
-	materialGround.normalMap = textureLoad.load("../assets/texturas/terrain/grasslight-big-nm.jpg"); //busca a normal, que da noção básica de profundidade
+	materialGround.normalMap = textureLoad.load("texture/grasslight-big-nm.jpg"); //busca a normal, que da noção básica de profundidade
 	
 	
 	ground = new THREE.Mesh(
@@ -15066,8 +14493,7 @@ var animation = function (){
 		}else if(keys['down'] == true){
 			char.position.z -= wizardVelocity;
 		}
-		charHelper.update();
-		charBounding.setFromObject(elementos['Wizard'].children[0]);
+		charBounding.setFromObject(elementos['Wizard']);
 
 		//teste de colisao
 		staticBounding.forEach(function(item){
