@@ -14257,8 +14257,6 @@ var objLoading = function(){
 			obj.scale.x = 0.03;
 
 			obj.position.y = -2;
-			obj.position.x = 0;
-			obj.position.z = 180;
 
 			char = new THREE.Group();
 			char.add(camera);
@@ -14297,7 +14295,7 @@ const setAction = function(toAction) {
 }
 
 var ambientLightOn = function (){
-	lights['ambient'] = new THREE.AmbientLight(0xffffff, 0.5);
+	lights['ambient'] = new THREE.AmbientLight(0xffffff, 1);
 	scene.add(lights['ambient']);
 }
 
@@ -14433,7 +14431,7 @@ var init = function (){
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
 		
-	camera.position.z = 300;
+	camera.position.z = 100;
 	camera.position.x = 0;
 	camera.position.y = 10;
 
@@ -14465,7 +14463,7 @@ var init = function (){
 
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-	scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
+	//scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
 
 	document.addEventListener('keydown', apertouButao);
 	document.addEventListener('keyup', soltouBotao);
@@ -14491,7 +14489,18 @@ var soltouBotao = function(e){
 		setAction(animationActions[0]);
 		
 	}
-
+	if (e.keyCode == 87){ // w
+		keys['w'] = false;		
+	}
+	if (e.keyCode == 83){ // s
+		keys['s'] = false;
+	}
+	if (e.keyCode == 65){ // a
+		keys['a'] = false;
+	}
+	if (e.keyCode == 68){ // d
+		keys['d'] = false;
+	}
 }
 
 var apertouButao =  function(e){
@@ -14517,7 +14526,22 @@ var apertouButao =  function(e){
 		char.position.x += 0.5;
 		
 	}
-
+	if (e.keyCode == 87){ // w
+		keys['w'] = true;
+		camera.rotation.x += 0.1;
+	}
+	if (e.keyCode == 83){ // s
+		keys['s'] = true;
+		camera.rotation.x -= 0.1;
+	}
+	if (e.keyCode == 65){ // a
+		keys['a'] = true;
+		char.rotation.y -= 0.1;
+	}
+	if (e.keyCode == 68){ // d
+		keys['d'] = true;
+		char.rotation.y += 0.1;
+	}
 }
 
 var animation = function (){
