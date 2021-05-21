@@ -1,0 +1,6 @@
+up = move o personagem para frente
+down = move o personagem para trás
+left = move o personagem para a esquerda
+right = move o personagem para a direita
+a = rotaciona a camera para a esquerda
+d = rotaciona a camera para a direita
