@@ -2,5 +2,8 @@ Linux:
 google-chrome --allow-file-access-from-files
 
 Windows:
-C:\Program Files (x86)\Google\Chrome\Application
+cd C:\Program Files (x86)\Google\Chrome\Application
+chrome --allow-file-access-from-files
+
+cd C:\Program Files\Google\Chrome\Application
 chrome --allow-file-access-from-files
